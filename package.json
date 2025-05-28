@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@beforesemicolon/site-builder": "*"
+    "@beforesemicolon/site-builder": "^0.16.1"
   },
   "devDependencies": {
     "concurrently": "^9.1.2",

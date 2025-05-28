@@ -1,0 +1,16 @@
+{
+  "id": "404",
+  "type": "page",
+  "extends": "base",
+  "name": "404",
+  "title": "404 - Page Not Found",
+  "pathname": "/404",
+  "content": [
+    {
+      "name": "h2",
+      "children": [
+        "404 - Page Not Found"
+      ]
+    }
+  ]
+}

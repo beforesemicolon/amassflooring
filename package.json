@@ -1,0 +1,25 @@
+{
+  "name": "amassflooring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "build:watch": "nodemon --watch templates --watch widgets --watch scripts --watch stylesheets --watch assets --exec \"npm run build\"",
+    "start": "serve public",
+    "local": "concurrently -k \"npm run build:watch\" \"npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@beforesemicolon/site-builder": "*"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.0",
+    "serve": "^14.2.3"
+  }
+}

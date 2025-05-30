@@ -13,7 +13,7 @@
     {
       "name": "img",
       "src": "/assets/coming-soon.jpg",
-      "style": "width: 100%; height: auto; max-width: 100vw;"
+      "style": "margin: 0 auto; display: block; height: auto; max-width: 100vw; max-height: 80vh;"
     },
     {
       "name": "footer",
@@ -24,7 +24,7 @@
           "children": [
             {
               "name": "small",
-              "children": ["© 2023 A-Mass Flooring & Tile. All rights reserved."]
+              "children": ["© 2025 A-Mass Flooring & Tile LLC. All rights reserved."]
             }
           ]
         }

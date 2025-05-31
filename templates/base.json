@@ -10,6 +10,11 @@
   ],
   "favicons": [
     {
+      "rel": "icon",
+      "type": "image/x-icon",
+      "href": "favicon.ico"
+    },
+    {
       "rel": "apple-touch-icon",
       "sizes": "57x57",
       "href": "apple-icon-57x57.png"
@@ -77,11 +82,6 @@
       "type": "image/png",
       "sizes": "16x16",
       "href": "favicon-16x16.png"
-    },
-    {
-      "rel": "icon",
-      "type": "image/x-icon",
-      "href": "favicon.ico"
     }
   ],
   "links": [],

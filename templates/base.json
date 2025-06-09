@@ -6,7 +6,10 @@
   "lang": "en",
   "description": "Top-rated Massachusetts flooring and tile company offering expert residential and commercial services in tile, hardwood flooring, dustless sanding, luxury vinyl plank and tile (LVP/LVT), carpet, VCT, rubber, and sheet flooring. We also specialize in high-quality kitchen and bathroom renovations.",
   "stylesheets": [
-    "normalizer.css"
+    "normalizer.css",
+    ".wrapper { width: 100%; max-width: 1200px; padding: 0 25px; margin: 0 auto; box-sizing: border-box;}",
+    ".row { display: flex; gap: 20px; align-items: center; }",
+    ".space-apart { display: flex; gap: 20px; justify-content: space-between; align-items: center; }"
   ],
   "favicons": [
     {

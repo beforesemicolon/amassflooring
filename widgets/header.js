@@ -1,17 +1,18 @@
 export default {
+  cssSelector: "#header",
   style: {
-    ".header-wrapper": {
-      position: "sticky",
+    "#header": {
+      position: "fixed",
       top: "0",
       width: "100%",
       zIndex: "1000",
       "--header-shape": "polygon(" +
-        "0 0%," + // top-left
-        "100% 0," + // top-right
-        "100% 50%," + // middle-right
-        "calc(max(350px, (100vw - 1200px) / 2 + 350px)) 50%," + // center left
-        "calc(max(280px, (100vw - 1200px) / 2 + 280px)) 100%," + // center bottom
-        "0 100%)", // bottom-left
+        "0 0%," +
+        "100% 0," +
+        "100% 50%," +
+        "calc(max(350px, (100vw - 1200px) / 2 + 350px)) 50%," +
+        "calc(max(280px, (100vw - 1200px) / 2 + 280px)) 100%," +
+        "0 100%)",
       "--header-border-shape": "polygon(" +
         "0 calc(100% - 5px), " +
         "calc(max(282px, (100vw - 1200px) / 2 + 282px)) calc(100% - 5px), " +
@@ -21,23 +22,23 @@ export default {
         "calc(max(355px, (100vw - 1200px) / 2 + 355px)) calc(100% - 65px), " +
         "calc(max(285px, (100vw - 1200px) / 2 + 285px)) calc(100% - 0px), " +
         "0 100%)",
+      "&::before": {
+        content: "''",
+        position: "absolute",
+        top: "15px",
+        left: "0",
+        width: "110%",
+        height: "100%",
+        background: "#fff",
+        clipPath: "var(--header-border-shape)",
+        zIndex: "1",
+        pointerEvents: "none",
+      }
     },
     header: {
       background: "repeating-linear-gradient(-45deg, #fff, #fff 10px, #fbfbfb 10px, #fbfbfb 20px)",
-      padding: "20px 40px",
+      padding: "20px 0",
       clipPath: "var(--header-shape)",
-    },
-    ".header-wrapper::before": {
-      content: "''",
-      position: "absolute",
-      top: "15px",
-      left: "0",
-      width: "110%",
-      height: "100%",
-      background: "#fff",
-      clipPath: "var(--header-border-shape)",
-      zIndex: "1",
-      pointerEvents: "none",
     },
     ".wrapper": {
       alignItems: "flex-start",
@@ -48,12 +49,17 @@ export default {
       gap: "10px",
       margin: 0
     },
-    ".navigation": {
+    "nav": {
       display: "flex",
       alignItems: "center",
       height: "30px",
       fontWeight: "600",
-      gap: "30px"
+      gap: "30px",
+      "@media (max-width: 1024px)": {
+        "& > a": {
+          display: "none",
+        }
+      }
     },
     ".menu-item": {
       textDecoration: "none",
@@ -65,7 +71,6 @@ export default {
     ".phone": {
       fontFamily: "'Open Sans', sans-serif",
       color: "#001f3f",
-      marginLeft: "20px",
       fontSize: "20px",
       gap: "0",
       img: {
@@ -118,14 +123,14 @@ export default {
   ],
   render({ phone, menuItems, env }) {
     return `
-       <div class="header-wrapper">
-         <header class="space-apart">
+       <div id="header">
+         <header class="space-apart ">
           <div class="wrapper space-apart">
             <h1 id="logo" class="row">
               <img class="logo-symbol" src="${env.assetsOrigin}assets/logo/symbol-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="88" style="height: 88px" />
               <img class="logo-name" src="${env.assetsOrigin}assets/logo/name-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="43" style="height: 43px" />
             </h1>
-            <nav class="navigation row">
+            <nav class="row">
               <div class="phone row">
                 <img src="${env.assetsOrigin}assets/icons/phone.icon.svg" alt="phone icon" height="16" width="16" />
                 ${phone}

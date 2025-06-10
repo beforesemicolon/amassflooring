@@ -9,7 +9,11 @@
     "normalizer.css",
     ".wrapper { width: 100%; max-width: 1200px; padding: 0 25px; margin: 0 auto; box-sizing: border-box;}",
     ".row { display: flex; gap: 20px; align-items: center; }",
-    ".space-apart { display: flex; gap: 20px; justify-content: space-between; align-items: center; }"
+    ".center { display: flex; align-items: center; justify-content: center; }",
+    ".col { display: flex; flex-direction: column; }",
+    ".space-apart { display: flex; gap: 20px; justify-content: space-between; align-items: center; }",
+    ":root {--accent-color: #13243F}",
+    "button, .btn {all: unset; cursor: pointer; font-weight: bold; color: var(--accent-color); font-weight: 700; text-transform: capitalize; padding: 15px 35px; border-radius: 3px; background-color: #fff; }"
   ],
   "favicons": [
     {
@@ -98,7 +102,8 @@
     "open-sans/OpenSans-Light.ttf",
     "open-sans/OpenSans-LightItalic.ttf",
     "open-sans/OpenSans-Semibold.ttf",
-    "open-sans/OpenSans-SemiboldItalic.ttf"
+    "open-sans/OpenSans-SemiboldItalic.ttf",
+    "Fjalla_One/FjallaOne-Regular.ttf"
   ],
   "manifest": "manifest.json",
   "content": []

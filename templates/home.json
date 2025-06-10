@@ -5,6 +5,7 @@
   "name": "Home",
   "pathname": "/",
   "content": [
-    { "name": "widget", "id": "header" }
+    { "name": "widget", "id": "header" },
+    { "name": "widget", "id": "hero" }
   ]
 }

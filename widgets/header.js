@@ -33,6 +33,12 @@ export default {
         clipPath: "var(--header-border-shape)",
         zIndex: "1",
         pointerEvents: "none",
+      },
+      "&.simple": {
+        borderBottom: "10px solid var(--accent-color)",
+        "&::before": {
+          display: "none",
+        }
       }
     },
     header: {
@@ -141,6 +147,38 @@ export default {
             </nav>
           </div>
         </header>
+        <script>
+          const header = document.querySelector('div#header header');
+          const logo = header.querySelector('#logo');
+          const logoSymbol = header.querySelector('.logo-symbol');
+          const wrapper = header.querySelector('.wrapper');
+          const headerBefore = header;
+					
+					const lerp = (a, b, t) => {
+						return a + (b - a) * t;
+          }
+					
+					;document.addEventListener('scroll', () => {
+						const scrollY = Math.min(window.scrollY, 44);
+            const t = scrollY / 44;
+						
+						requestAnimationFrame(() => {
+						  logo.style.height = lerp(88, 44, t) + 'px';
+              header.style.clipPath = t >= 0.4 ? 'none' : 'var(--header-shape)';
+							
+              logoSymbol.style.height = lerp(88, 60, t) + 'px';
+							
+							if (t >= 0.4) {
+                wrapper.style.alignItems = 'center';
+								header.parentNode.classList.add('simple');
+              } else {
+                wrapper.style.alignItems = 'flex-start';
+								header.parentNode.classList.remove('simple');
+              }
+						})
+	
+					})
+        </script>
       </div>
     `;
   }

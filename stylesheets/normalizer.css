@@ -26,6 +26,7 @@ body {
     height: 100%;
     font-family: Open Sans, sans-serif;
     color: #fff;
+    letter-spacing: 0.06rem;
 }
 
 h1,
@@ -35,6 +36,8 @@ h4,
 h5,
 h6 {
     font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
 
 h1,
@@ -45,6 +48,7 @@ h5,
 h6,
 p {
     margin-top: 0;
+    line-height: 1.2;
 }
 
 span {

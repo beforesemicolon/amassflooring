@@ -35,7 +35,7 @@ export default {
         pointerEvents: "none",
       },
       "&.simple": {
-        borderBottom: "10px solid var(--accent-color)",
+        borderBottom: "2px solid #f2f2f2",
         "&::before": {
           display: "none",
         }
@@ -50,10 +50,13 @@ export default {
       alignItems: "flex-start",
     },
     "#logo": {
-      height: "88px",
-      width: "auto",
-      gap: "10px",
-      margin: 0
+      margin: 0,
+      a: {
+        height: "88px",
+        width: "auto",
+        gap: "10px",
+        margin: 0
+      }
     },
     "nav": {
       display: "flex",
@@ -132,9 +135,11 @@ export default {
        <div id="header">
          <header class="space-apart ">
           <div class="wrapper space-apart">
-            <h1 id="logo" class="row">
-              <img class="logo-symbol" src="${env.assetsOrigin}assets/logo/symbol-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="88" style="height: 88px" />
-              <img class="logo-name" src="${env.assetsOrigin}assets/logo/name-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="43" style="height: 43px" />
+            <h1 id="logo">
+              <a href="/" class="row">
+                <img class="logo-symbol" src="${env.assetsOrigin}assets/logo/symbol-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="88" style="height: 88px" />
+                <img class="logo-name" src="${env.assetsOrigin}assets/logo/name-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="43" style="height: 43px" />
+              </a>
             </h1>
             <nav class="row">
               <div class="phone row">
@@ -149,7 +154,7 @@ export default {
         </header>
         <script>
           const header = document.querySelector('div#header header');
-          const logo = header.querySelector('#logo');
+          const logo = header.querySelector('#logo a');
           const logoSymbol = header.querySelector('.logo-symbol');
           const wrapper = header.querySelector('.wrapper');
           const headerBefore = header;
@@ -171,9 +176,11 @@ export default {
 							if (t >= 0.4) {
                 wrapper.style.alignItems = 'center';
 								header.parentNode.classList.add('simple');
+								header.style.background = '#fff';
               } else {
                 wrapper.style.alignItems = 'flex-start';
 								header.parentNode.classList.remove('simple');
+								header.style.removeProperty('background');
               }
 						})
 	

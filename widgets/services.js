@@ -58,7 +58,7 @@ export default {
     {
       type: "html",
       name: "description",
-      value: "Transform your space with expert flooring installations and elegant kitchen and bathroom renovations. <strong>Our commitment to quality ensures stunning results every time</strong>."
+      value: "<p>Transform your space with expert flooring installations and elegant kitchen and bathroom renovations. <strong>Our commitment to quality ensures stunning results every time</strong>.</p>"
     }
   ],
   render({ services, heading, description, env }) {

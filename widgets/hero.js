@@ -46,10 +46,10 @@ export default {
     }
   }),
   inputs: [
-    { type: "textarea", name: "title", label: "Title", value: "Massachusetts’\n Trusted Flooring & Renovation Experts" },
-    { type: "textarea", name: "description", label: "Description", value: "Specializing in Flooring, Kitchen & Bathroom Renovations" },
-    { type: "text", name: "cta", label: "CTA Text", value: "Request A Quote" },
-    { type: "text", name: "note", label: "Note", value: "Commercial & Residential" }
+    { type: "textarea", name: "title", value: "Massachusetts’\n Trusted Flooring & Renovation Experts" },
+    { type: "textarea", name: "description", value: "Specializing in Flooring, Kitchen & Bathroom Renovations" },
+    { type: "text", name: "cta", value: "Request A Quote" },
+    { type: "text", name: "note", value: "Commercial & Residential" }
   ],
   render({ title, description, cta, note }) {
     return `

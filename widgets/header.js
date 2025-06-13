@@ -157,14 +157,15 @@ export default {
           const logo = header.querySelector('#logo a');
           const logoSymbol = header.querySelector('.logo-symbol');
           const wrapper = header.querySelector('.wrapper');
+					const contentBox = document.querySelector('body > .content');
           const headerBefore = header;
 					
 					const lerp = (a, b, t) => {
 						return a + (b - a) * t;
           }
 					
-					;document.addEventListener('scroll', () => {
-						const scrollY = Math.min(window.scrollY, 44);
+					;contentBox.addEventListener('scroll', (e) => {
+						const scrollY = Math.min(contentBox.scrollTop, 44);
             const t = scrollY / 44;
 						
 						requestAnimationFrame(() => {

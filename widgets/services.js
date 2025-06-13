@@ -2,7 +2,6 @@ export default {
   cssSelector: "#services",
   style: {
     "#services": {
-      color: "#222",
       backgroundColor: "#f7f7f7",
     },
     ul: {
@@ -76,7 +75,7 @@ export default {
       <section id="services" class="center view-section">
         <div class="wrapper">
           <h2>${heading}</h2>
-          <p>${description}</p>
+          ${description}
           <ul class="row">${serviceItems}</ul>
         </div>
       </section>

@@ -1,8 +1,6 @@
 export default {
   cssSelector: "#about",
   style: {
-    "#about": {
-    },
     ".wrapper": {
       gap: "60px"
     },
@@ -26,7 +24,7 @@ export default {
           <img src="${env.assetsOrigin}${image}" alt="${title}" />
           <div class="content">
             <h2>${title}</h2>
-            <p>${description}</p>
+            ${description}
           </div>
         </div>
       </section>

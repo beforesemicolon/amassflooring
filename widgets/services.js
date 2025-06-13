@@ -3,7 +3,7 @@ export default {
   style: {
     "#services": {
       color: "#222",
-      backgroundColor: "#fff",
+      backgroundColor: "#f7f7f7",
     },
     ul: {
       listStyleType: "none",

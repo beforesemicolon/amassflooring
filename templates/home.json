@@ -7,6 +7,7 @@
   "content": [
     { "name": "widget", "id": "header" },
     { "name": "widget", "id": "hero" },
-    { "name": "widget", "id": "services" }
+    { "name": "widget", "id": "services" },
+    { "name": "widget", "id": "about" }
   ]
 }

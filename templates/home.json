@@ -13,7 +13,8 @@
         { "name": "widget", "id": "hero" },
         { "name": "widget", "id": "services" },
         { "name": "widget", "id": "about" },
-        { "name": "widget", "id": "our-work" }
+        { "name": "widget", "id": "our-work" },
+        { "name": "widget", "id": "contact" }
       ]
     }
   ]

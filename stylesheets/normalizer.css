@@ -29,6 +29,10 @@ body {
     letter-spacing: 0.06rem;
 }
 
+[hidden] {
+    display: none;
+}
+
 h1,
 h2,
 h3,

@@ -1,0 +1,67 @@
+export default {
+  cssSelector: "#footer",
+  style: {
+    "#footer": {
+      backgroundColor: "var(--accent-color)",
+      color: "#fff",
+    },
+    a: {
+      color: "#fff",
+      textDecoration: "none"
+    },
+    ".wrapper": {
+      marginTop: "150px",
+    },
+    ".social-links": {
+      a: {
+        span: {
+          display: "inline-block",
+          width: "30px",
+          height: "30px",
+          textIndent: "2em",
+          overflow: "hidden",
+        }
+      }
+    }
+  },
+  inputs: [
+    {type: "image", name: "logo", value: "assets/logo/emblem-logo-white.svg"},
+    {type: "html", name: "address", value: "<p>233 Broad St\nSte 13A #100\nBridgewater, MA 02324</p>"},
+    {type: "text", name: "phone", value: "(508) 941 - 8283"},
+    {
+      type: "text",
+      name: "copyright",
+      label: "Copyright",
+      value: "© 2025 A-Mass Flooring & Tile LLC. All rights reserved."
+    },
+    {
+      type: "group", name: "socialLinks", definitions: [
+        {type: "text", name: "facebook", value: "https://www.facebook.com/people/A-Mass-Flooring/61577201170889/"},
+        {type: "text", name: "instagram", value: "https://www.instagram.com/amassflooring/"},
+        {type: "text", name: "twitter", value: ""},
+        {type: "text", name: "youtube", value: ""},
+      ]
+    }
+  ],
+  render({logo, address, phone, copyright, socialLinks, env}) {
+    const social = Object.entries(socialLinks)
+      .filter(([k, v]) => Boolean(v))
+      .map(([k, v]) => `<a target="_blank" href="${v}" aria-label="${k} social logo"><span style="background: url(${env.assetsOrigin}assets/icons/${k}.icon.svg)">${k}</span></a>`).join("");
+   
+    return `
+      <footer id="footer" class="view-section">
+        <div class="wrapper row">
+          <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" />
+          <div class="contact-info">
+            <p>${phone}</p>
+            <address>${address}</address>
+            <p><small><em>${copyright}</em></small></p>
+          </div>
+          <div class="social-links row">
+            ${social}
+          </div>
+        </div>
+      </footer>
+    `;
+  }
+}

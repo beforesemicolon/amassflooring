@@ -48,7 +48,6 @@ function handleForm(formId, emailTemplate, serviceId) {
     
     form.addEventListener('submit', ev => {
       ev.preventDefault();
-      form.className = '';
       
       if (!form.checkValidity()) {
         form.classList.add('invalid-form');

@@ -80,17 +80,22 @@ export default {
       },
       "&.invalid-form": {
         ".error-message": {
-          display: "block",
+          display: "flex",
+        }
+      },
+      "&.sending-request": {
+        ".sending": {
+          display: "flex",
         }
       },
       "&.failed-request": {
         ".error": {
-          display: "block",
+          display: "flex",
         }
       },
       "&.success-request": {
         ".success": {
-          display: "block",
+          display: "flex",
         }
       },
     },

@@ -30,21 +30,21 @@ export default {
         {
           type: "group",
           definitions: [
-            { type: "image", name: "image", value: "assets/flooring-service.jpg" },
+            { type: "image", name: "image", value: "assets/flooring-service.webp" },
             { type: "text", name: "name", value: "Flooring service" },
           ]
         },
         {
           type: "group",
           definitions: [
-            { type: "image", name: "image", value: "assets/kitchen-remodeling-service.jpg" },
+            { type: "image", name: "image", value: "assets/kitchen-remodeling-service.webp" },
             { type: "text", name: "name", value: "Kitchen Remodeling" },
           ]
         },
         {
           type: "group",
           definitions: [
-            { type: "image", name: "image", value: "assets/bathroom-renovation-service.jpg" },
+            { type: "image", name: "image", value: "assets/bathroom-renovation-service.webp" },
             { type: "text", name: "name", value: "Bathroom Renovations" },
           ]
         }
@@ -65,7 +65,7 @@ export default {
     const serviceItems = services.map(service => `
       <li class="service-card col" tabindex="0">
         <div class="thumbnail thumbnail-1-1">
-          <img src="${env.assetsOrigin}${service.image}" alt="${service.name}" />
+          <img src="${env.assetsOrigin}${service.image}" alt="${service.name}" loading="lazy" />
         </div>
         <p>${service.name}</p>
       </li>

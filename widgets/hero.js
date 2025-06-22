@@ -2,7 +2,7 @@ export default {
   cssSelector: "#hero",
   style: ({env}) => ({
     "#hero": {
-      background: `url('${env.assetsOrigin}assets/hero-bg@2x.jpg') no-repeat center center`,
+      background: `url('${env.assetsOrigin}assets/hero-bg@2x.webp') no-repeat center center`,
       backgroundSize: "cover",
       paddingTop: "100px",
       "--text-shadow": "0 3px 6px rgba(0, 0, 0, 0.3)"

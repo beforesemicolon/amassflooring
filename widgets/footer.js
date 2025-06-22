@@ -51,7 +51,7 @@ export default {
     return `
       <footer id="footer" class="view-section">
         <div class="wrapper row">
-          <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" />
+          <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
           <div class="contact-info">
             <p>${phone}</p>
             <address>${address}</address>

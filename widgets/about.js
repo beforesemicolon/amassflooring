@@ -10,7 +10,7 @@ export default {
   },
   inputs: [
     { type: "text", name: "title", value: "About Us" },
-    { type: "image", name: "image", value: "assets/flooring-selection-options.jpg" },
+    { type: "image", name: "image", value: "assets/flooring-selection-options.webp" },
     {
       type: "html",
       name: "description",
@@ -21,7 +21,7 @@ export default {
     return `
       <section id="about" class="center view-section">
         <div class="wrapper row">
-          <img src="${env.assetsOrigin}${image}" alt="${title}" />
+          <img src="${env.assetsOrigin}${image}" alt="${title}" loading="lazy"/>
           <div class="content">
             <h2>${title}</h2>
             ${description}

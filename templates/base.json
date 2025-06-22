@@ -4,6 +4,14 @@
   "title": "A-Mass Flooring & Tile | Massachusetts Flooring and Tile Experts",
   "lang": "en",
   "description": "Top-rated Massachusetts flooring and tile company offering expert residential and commercial services in tile, hardwood flooring, dustless sanding, luxury vinyl plank and tile (LVP/LVT), carpet, VCT, rubber, and sheet flooring. We also specialize in high-quality kitchen and bathroom renovations.",
+  "image": "/assets/logo/logo-black.svg",
+  "scripts": [
+    {
+      "async": true,
+      "src": "https://www.googletagmanager.com/gtag/js?id=G-XCXJ3YGVFC"
+    },
+    "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XCXJ3YGVFC');"
+  ],
   "stylesheets": [
     "normalizer.css",
     ".content { height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth;}",

@@ -18,8 +18,7 @@ export default {
     },
     ".wrapper": {
       marginTop: "150px",
-      alignItems: "flex-start",
-      justifyContent: "space-between"
+      alignItems: "flex-start"
     },
     img: {
       position: "relative",
@@ -28,8 +27,11 @@ export default {
     ".details": {
       gap: "30px",
     },
+    ".contact-info, .social-links": {
+      paddingTop: "30px",
+    },
     ".social-links": {
-      paddingTop: "50px",
+      gap: "35px",
       a: {
         span: {
           display: "inline-block",
@@ -79,13 +81,11 @@ export default {
     return `
       <footer id="footer" class="view-section col">
         <div class="wrapper row">
-          <div class="details row">
-            <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
-            <div class="contact-info">
-              <p><a href="tel:${phone.replace(/\D/g, "")}">${phone}</a></p>
-              <address>${formattedAddress}</address>
-              <p><small><em>${copyright}</em></small></p>
-            </div>
+          <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
+          <div class="contact-info">
+            <p><a href="tel:${phone.replace(/\D/g, "")}">${phone}</a></p>
+            <address>${formattedAddress}</address>
+            <p><small><em>${copyright}</em></small></p>
           </div>
           <div class="social-links row">
             ${social}

@@ -17,6 +17,10 @@
         { "name": "widget", "id": "contact" },
         { "name": "widget", "id": "footer" }
       ]
+    },
+    {
+      "name": "widget",
+      "id": "cookies-warning"
     }
   ]
 }

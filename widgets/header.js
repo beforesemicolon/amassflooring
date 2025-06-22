@@ -79,12 +79,15 @@ export default {
     },
     ".phone": {
       fontFamily: "'Open Sans', sans-serif",
-      color: "#001f3f",
       fontSize: "20px",
       gap: "0",
       img: {
         width: "40px",
         height: "40px",
+      },
+      a: {
+        textDecoration: "none",
+        color: "#001f3f",
       }
     }
   },
@@ -144,7 +147,7 @@ export default {
             <nav class="row">
               <div class="phone row">
                 <img src="${env.assetsOrigin}assets/icons/phone.icon.svg" alt="phone icon" height="16" width="16" />
-                ${phone}
+                <a href="tel:${phone.replace(/\D/g, "")}">${phone}</a>
               </div>
               ${menuItems.map(item => `
                 <a href="${item.link}" class="menu-item">${item.label}</a>

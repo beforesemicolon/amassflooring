@@ -4,6 +4,13 @@ export default {
     "#footer": {
       backgroundColor: "var(--accent-color)",
       color: "#fff",
+      justifyContent: "space-between",
+      address: {
+        p: {
+          fontSize: "1.2em",
+          color: "#68a2ff"
+        }
+      }
     },
     a: {
       color: "#fff",
@@ -11,8 +18,18 @@ export default {
     },
     ".wrapper": {
       marginTop: "150px",
+      alignItems: "flex-start",
+      justifyContent: "space-between"
+    },
+    img: {
+      position: "relative",
+      top: "-10px",
+    },
+    ".details": {
+      gap: "30px",
     },
     ".social-links": {
+      paddingTop: "50px",
       a: {
         span: {
           display: "inline-block",
@@ -22,6 +39,15 @@ export default {
           overflow: "hidden",
         }
       }
+    },
+    ".floor-samples": {
+      width: "100%",
+      height: "50%",
+      backgroundImage: "url('/assets/flooring-samples.webp')",
+      backgroundRepeat: "repeat-x",
+      backgroundSize: "auto 100%",
+      backgroundPosition: "center",
+      opacity: "0.8",
     }
   },
   inputs: [
@@ -47,20 +73,25 @@ export default {
     const social = Object.entries(socialLinks)
       .filter(([k, v]) => Boolean(v))
       .map(([k, v]) => `<a target="_blank" href="${v}" aria-label="${k} social logo"><span style="background: url(${env.assetsOrigin}assets/icons/${k}.icon.svg)">${k}</span></a>`).join("");
-   
+    
+    const formattedAddress = address.replace(/\n/g, "<br>");
+    
     return `
-      <footer id="footer" class="view-section">
+      <footer id="footer" class="view-section col">
         <div class="wrapper row">
-          <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
-          <div class="contact-info">
-            <p>${phone}</p>
-            <address>${address}</address>
-            <p><small><em>${copyright}</em></small></p>
+          <div class="details row">
+            <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
+            <div class="contact-info">
+              <p><a href="tel:${phone.replace(/\D/g, "")}">${phone}</a></p>
+              <address>${formattedAddress}</address>
+              <p><small><em>${copyright}</em></small></p>
+            </div>
           </div>
           <div class="social-links row">
             ${social}
           </div>
         </div>
+        <div class="floor-samples"></div>
       </footer>
     `;
   }

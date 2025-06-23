@@ -61,9 +61,9 @@ export default {
       value: "<p>Transform your space with expert flooring installations and elegant kitchen and bathroom renovations. <strong>Our commitment to quality ensures stunning results every time</strong>.</p>"
     }
   ],
-  render({ services, heading, description, env }) {
+  render({ services, heading, description, env, $comp }) {
     const serviceItems = services.map(service => `
-      <li class="service-card col" tabindex="0">
+      <li class="service-card col" tabindex="0" data-service="${service.name}">
         <div class="thumbnail thumbnail-1-1">
           <img src="${env.assetsOrigin}${service.image}" alt="${service.name}" loading="lazy" />
         </div>
@@ -79,6 +79,30 @@ export default {
           <ul class="row">${serviceItems}</ul>
         </div>
       </section>
+      <dialog id="flooring-service-dialog">${$comp('flooring-service')}</dialog>
+      <dialog id="bathroom-remodeling-service-dialog">${$comp('bathroom-remodeling-service')}</dialog>
+      <dialog id="kitchen-renovations-service-dialog">${$comp('kitchen-renovations-service')}</dialog>
+      <script>
+        {
+					const flooringServiceDialog = document.getElementById('flooring-service-dialog');
+          const bathroomRemodelingServiceDialog = document.getElementById('bathroom-remodeling-service-dialog');
+				  const kitchenRenovationsServiceDialog = document.getElementById('kitchen-renovations-service-dialog');
+					const flooringServiceCard = document.querySelector('.service-card[data-service="Flooring service"]');
+          const bathroomRemodelingServiceCard = document.querySelector('.service-card[data-service="Bathroom Renovations"]');
+          const kitchenRenovationsServiceCard = document.querySelector('.service-card[data-service="Kitchen Remodeling"]');
+					
+					const dialogs = [flooringServiceDialog, bathroomRemodelingServiceDialog, kitchenRenovationsServiceDialog];
+					
+					[flooringServiceCard, bathroomRemodelingServiceCard, kitchenRenovationsServiceCard].forEach((card, idx) => {
+						card.addEventListener('click', () => {
+              dialogs[idx].showModal();
+              dialogs[idx].querySelector('.close-btn').addEventListener('click', () => {
+                 dialogs[idx].close();
+              })
+						})
+					})
+        }
+      </script>
     `;
   }
 }

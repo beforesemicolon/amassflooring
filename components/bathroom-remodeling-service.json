@@ -50,22 +50,6 @@
               }
             }
           }
-        },
-        "@keyframes bg-fade": {
-          "from": { "background": "#5c87cd" },
-          "to": { "background": "#13243F" }
-        },
-        "@keyframes header-slide": {
-          "from": { "transform": "translateY(-50px)", "opacity": 0 },
-          "to": { "transform": "translateY(0)", "opacity": 1 }
-        },
-        "@keyframes ul-slide": {
-          "from": { "transform": "translateY(50px)", "opacity": 0 },
-          "to": { "transform": "translateY(0)", "opacity": 1 }
-        },
-        "@keyframes close-btn-slide": {
-          "from": { "transform": "translateX(100px)", "opacity": 0 },
-          "to": { "transform": "translateX(0)", "opacity": 1 }
         }
       }
     }

@@ -8,7 +8,7 @@ export default {
       address: {
         p: {
           fontSize: "1.2em",
-          color: "#68a2ff"
+          color: "#aaa"
         }
       }
     },
@@ -56,6 +56,7 @@ export default {
     {type: "image", name: "logo", value: "assets/logo/emblem-logo-white.svg"},
     {type: "html", name: "address", value: "<p>233 Broad St\nSte 13A #100\nBridgewater, MA 02324</p>"},
     {type: "text", name: "phone", value: "(508) 941 - 8283"},
+    {type: "text", name: "email", value: "info@amassflooring.com"},
     {
       type: "text",
       name: "copyright",
@@ -71,7 +72,7 @@ export default {
       ]
     }
   ],
-  render({logo, address, phone, copyright, socialLinks, env}) {
+  render({logo, address, phone, copyright, socialLinks, email, env}) {
     const social = Object.entries(socialLinks)
       .filter(([k, v]) => Boolean(v))
       .map(([k, v]) => `<a target="_blank" href="${v}" aria-label="${k} social logo"><span style="background: url(${env.assetsOrigin}assets/icons/${k}.icon.svg)">${k}</span></a>`).join("");
@@ -83,7 +84,8 @@ export default {
         <div class="wrapper row">
           <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
           <div class="contact-info">
-            <p><a href="tel:${phone.replace(/\D/g, "")}">${phone}</a></p>
+            <p style="margin: 0"><a href="tel:${phone.replace(/\D/g, "")}">${phone}</a></p>
+            <p><small><em><a href="mailto:${email}">${email}</a></em></small></p>
             <address>${formattedAddress}</address>
             <p><small><em>${copyright}</em></small></p>
           </div>

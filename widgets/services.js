@@ -79,9 +79,9 @@ export default {
           <ul class="row">${serviceItems}</ul>
         </div>
       </section>
-      <dialog id="flooring-service-dialog">${$comp('flooring-service')}</dialog>
-      <dialog id="bathroom-remodeling-service-dialog">${$comp('bathroom-remodeling-service')}</dialog>
-      <dialog id="kitchen-renovations-service-dialog">${$comp('kitchen-renovations-service')}</dialog>
+      <dialog id="flooring-service-dialog">${$comp('flooring-installation-service')}</dialog>
+      <dialog id="bathroom-remodeling-service-dialog">${$comp('bathroom-renovations-service')}</dialog>
+      <dialog id="kitchen-renovations-service-dialog">${$comp('kitchen-remodeling-service')}</dialog>
       <script>
         {
 					const flooringServiceDialog = document.getElementById('flooring-service-dialog');
@@ -96,7 +96,7 @@ export default {
 					[flooringServiceCard, bathroomRemodelingServiceCard, kitchenRenovationsServiceCard].forEach((card, idx) => {
 						card.addEventListener('click', () => {
               dialogs[idx].showModal();
-              dialogs[idx].querySelector('.close-btn').addEventListener('click', () => {
+              dialogs[idx].querySelector('.return-btn').addEventListener('click', () => {
                  dialogs[idx].close();
               })
 						})

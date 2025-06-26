@@ -1,0 +1,71 @@
+{
+  "id": "bathroom-renovations-service",
+  "stylesheets": [
+    {
+      "content": {
+        "#bathroom-renovations-service": {
+          ".gallery": {
+            "display": "flex",
+            "gap": "1rem",
+            "marginTop": "2rem"
+          },
+          ".gallery img": {
+            "borderRadius": "0.5rem",
+            "flex": 1,
+            "objectFit": "cover",
+            "height": "300px"
+          }
+        }
+      }
+    }
+  ],
+  "content": [
+    {
+      "name": "section",
+      "id": "bathroom-renovations-service",
+      "class": "center col view-section service-section",
+      "children": [
+        {
+          "name": "div",
+          "class": "wrapper",
+          "children": [
+            {
+              "name": "button",
+              "class": "return-btn",
+              "children": [
+                {
+                  "name": "img",
+                  "src": "{{env.assetsOrigin}}assets/icons/return-arrow.icon.svg"
+                }
+              ]
+            },
+            {
+              "name": "header",
+              "children": [
+                {
+                  "name": "h3",
+                  "children": ["bathroom Renovations"]
+                },
+                {
+                  "name": "p",
+                  "children": [
+                    "Details of our bathroom remodels are carefully considered taking in consideration comfort and style."
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "div",
+              "class": "gallery",
+              "children": [
+                { "name": "img", "src": "" },
+                { "name": "img", "src": "" },
+                { "name": "img", "src": "" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

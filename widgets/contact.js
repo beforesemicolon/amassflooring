@@ -16,6 +16,7 @@ export default {
     "#contact-form": {
       position: "relative",
       alignItems: "flex-start",
+      justifyContent: "space-between",
       marginTop: "40px",
       gap: "40px",
       fieldset: {
@@ -23,6 +24,7 @@ export default {
         padding: 0,
         border: "none",
         flex: 1,
+        alignSelf: "stretch",
         p: {
           margin: "-10px 0 0 0",
           lineHeight: "1.2",
@@ -58,6 +60,9 @@ export default {
         height: "auto",
         resize: "none",
         lineHeight: "1.5",
+      },
+      ".g-recaptcha": {
+        position: "absolute"
       },
       ".error-message": {
         display: "none",

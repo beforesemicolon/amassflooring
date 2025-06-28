@@ -4,16 +4,17 @@
     {
       "content": {
         "#bathroom-renovations-service": {
-          ".gallery": {
-            "display": "flex",
-            "gap": "1rem",
-            "marginTop": "2rem"
+          ".wrapper": {
+            "alignItems": "flex-end"
           },
-          ".gallery img": {
-            "borderRadius": "0.5rem",
+          ".left-col": {
+            "maxWidth": "60%"
+          },
+          "img": {
+            "width": "100%",
             "flex": 1,
-            "objectFit": "cover",
-            "height": "300px"
+            "opacity": 0,
+            "animation": "slide-up 0.7s ease forwards"
           }
         }
       }
@@ -27,42 +28,41 @@
       "children": [
         {
           "name": "div",
-          "class": "wrapper",
+          "class": "wrapper row",
           "children": [
             {
-              "name": "button",
-              "class": "return-btn",
-              "children": [
-                {
-                  "name": "img",
-                  "src": "{{env.assetsOrigin}}assets/icons/return-arrow.icon.svg"
-                }
-              ]
-            },
-            {
-              "name": "header",
-              "children": [
-                {
-                  "name": "h3",
-                  "children": ["bathroom Renovations"]
-                },
-                {
-                  "name": "p",
-                  "children": [
-                    "Details of our bathroom remodels are carefully considered taking in consideration comfort and style."
-                  ]
-                }
-              ]
-            },
-            {
               "name": "div",
-              "class": "gallery",
+              "class": "left-col",
               "children": [
-                { "name": "img", "src": "" },
-                { "name": "img", "src": "" },
-                { "name": "img", "src": "" }
+                {
+                  "name": "header",
+                  "children": [
+                    {
+                      "name": "button",
+                      "class": "return-btn",
+                      "children": [
+                        {
+                          "name": "img",
+                          "src": "{{env.assetsOrigin}}assets/icons/return-arrow.icon.svg"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "h3",
+                      "children": ["bathroom Renovations"]
+                    },
+                    {
+                      "name": "p",
+                      "children": [
+                        "Details of our bathroom remodels are carefully considered taking in consideration comfort and style."
+                      ]
+                    }
+                  ]
+                },
+                { "name": "img", "style": "animation-delay: 0.1s", "src": "{{env.assetsOrigin}}assets/bathroom-renovations-before-after.webp", "alt": "bathroom renovation before and after example" }
               ]
-            }
+            },
+            { "name": "img", "style": "animation-delay: 0.2s", "src": "{{env.assetsOrigin}}assets/bathroom-renovations-sample.webp", "alt": "bathroom renovation example" }
           ]
         }
       ]

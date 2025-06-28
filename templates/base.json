@@ -36,7 +36,7 @@
           "all": "unset",
           "cursor": "pointer",
           "opacity": 0,
-          "animation": "close-btn-slide 0.5s 0.5s ease forwards"
+          "animation": "close-btn-slide 0.5s 0.3s ease forwards"
         }
       }
     },
@@ -57,12 +57,12 @@
             "animation": "header-slide 0.7s ease forwards"
           },
           "h3": {
-            "fontSize": "5rem",
+            "fontSize": "4rem",
             "margin": "10px 0 0",
             "textTransform": "capitalize"
           },
           "p": {
-            "opacity": 0.6
+            "opacity": 0.8
           }
         }
       }
@@ -77,7 +77,7 @@
           "from": { "transform": "translateY(-50px)", "opacity": 0 },
           "to": { "transform": "translateY(0)", "opacity": 1 }
         },
-        "@keyframes ul-slide": {
+        "@keyframes slide-up": {
           "from": { "transform": "translateY(50px)", "opacity": 0 },
           "to": { "transform": "translateY(0)", "opacity": 1 }
         },

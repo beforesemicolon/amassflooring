@@ -76,6 +76,9 @@ export default {
       fontFamily: "'Open Sans', sans-serif",
       transition: "color 0.3s",
       fontSize: "20px",
+      "&.active": {
+        color: "#f44336",
+      }
     },
     ".phone": {
       fontFamily: "'Open Sans', sans-serif",
@@ -133,6 +136,9 @@ export default {
       ]
     }
   ],
+  scripts: [
+    "header.js"
+  ],
   render({ phone, menuItems, env }) {
     return `
        <div id="header">
@@ -155,41 +161,6 @@ export default {
             </nav>
           </div>
         </header>
-        <script>
-          const header = document.querySelector('div#header header');
-          const logo = header.querySelector('#logo a');
-          const logoSymbol = header.querySelector('.logo-symbol');
-          const wrapper = header.querySelector('.wrapper');
-					const contentBox = document.querySelector('body > .content');
-          const headerBefore = header;
-					
-					const lerp = (a, b, t) => {
-						return a + (b - a) * t;
-          }
-					
-					;contentBox.addEventListener('scroll', (e) => {
-						const scrollY = Math.min(contentBox.scrollTop, 44);
-            const t = scrollY / 44;
-						
-						requestAnimationFrame(() => {
-						  logo.style.height = lerp(88, 44, t) + 'px';
-              header.style.clipPath = t >= 0.4 ? 'none' : 'var(--header-shape)';
-							
-              logoSymbol.style.height = lerp(88, 60, t) + 'px';
-							
-							if (t >= 0.4) {
-                wrapper.style.alignItems = 'center';
-								header.parentNode.classList.add('simple');
-								header.style.background = '#fff';
-              } else {
-                wrapper.style.alignItems = 'flex-start';
-								header.parentNode.classList.remove('simple');
-								header.style.removeProperty('background');
-              }
-						})
-	
-					})
-        </script>
       </div>
     `;
   }

@@ -33,6 +33,11 @@ export default {
         clipPath: "var(--header-border-shape)",
         zIndex: "1",
         pointerEvents: "none",
+        "@media (max-width: 425px)": {
+          "&": {
+            display: "none",
+          }
+        }
       },
       "&.simple": {
         borderBottom: "2px solid #f2f2f2",
@@ -45,9 +50,19 @@ export default {
       background: "repeating-linear-gradient(-45deg, #fff, #fff 10px, #fbfbfb 10px, #fbfbfb 20px)",
       padding: "20px 0",
       clipPath: "var(--header-shape)",
+      "@media (max-width: 425px)": {
+        "&": {
+          clipPath: "none",
+        }
+      }
     },
     ".wrapper": {
       alignItems: "flex-start",
+      "@media (max-width: 425px)": {
+        "&": {
+          alignItems: "center",
+        }
+      }
     },
     "#logo": {
       margin: 0,
@@ -65,10 +80,23 @@ export default {
       fontWeight: "600",
       gap: "30px",
       "@media (max-width: 1024px)": {
-        "& > a": {
+        "& > .phone span": {
           display: "none",
         }
-      }
+      },
+      "@media (max-width: 875px)": {
+        "& > .menu-item": {
+          display: "none",
+        },
+        "& > .phone span": {
+          display: "inline-block",
+        }
+      },
+      "@media (max-width: 600px)": {
+        "& > .phone span": {
+          display: "none",
+        }
+      },
     },
     ".menu-item": {
       textDecoration: "none",
@@ -84,13 +112,11 @@ export default {
       fontFamily: "'Open Sans', sans-serif",
       fontSize: "20px",
       gap: "0",
+      textDecoration: "none",
+      color: "#001f3f",
       img: {
         width: "40px",
         height: "40px",
-      },
-      a: {
-        textDecoration: "none",
-        color: "#001f3f",
       }
     }
   },
@@ -151,10 +177,10 @@ export default {
               </a>
             </h1>
             <nav class="row">
-              <div class="phone row">
+              <a href="tel:${phone.replace(/\D/g, "")}" class="phone row">
                 <img src="${env.assetsOrigin}assets/icons/phone.icon.svg" alt="phone icon" height="16" width="16" />
-                <a href="tel:${phone.replace(/\D/g, "")}">${phone}</a>
-              </div>
+                <span>${phone}</span>
+              </a>
               ${menuItems.map(item => `
                 <a href="${item.link}" class="menu-item">${item.label}</a>
               `).join('')}

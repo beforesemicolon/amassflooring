@@ -1,6 +1,14 @@
 export default {
   cssSelector: "#our-work",
   style: {
+    "header.space-apart": {
+      "@media (max-width: 600px)": {
+        flexDirection: "column",
+        alignItems: "flex-start",
+        gap: 0,
+        marginBottom: "10px",
+      }
+    },
     "#our-work": {
       backgroundColor: "#f7f7f7",
     },
@@ -36,6 +44,9 @@ export default {
       willChange: "transform",
       height: "285px",
       width: "100vw",
+      "@media (max-width: 875px)": {
+        height: "30vw",
+      },
       img: {
         height: "100%",
         flex: "0 0 auto",
@@ -43,10 +54,16 @@ export default {
         "&:hover": {
           transform: "scale(1.4)",
           zIndex: "1",
+          "@media (max-width: 600px)": {
+            transform: "scale(2)",
+          }
         }
       }
     }
   },
+  scripts: [
+    "our-work.js",
+  ],
   inputs: [
     { type: "text", name: "title", value: "Our Work" },
     { type: "html", name: "description", value: "<p>At A-Mass Flooring & Tile, we combine precision and care in every flooring and renovation project—transforming both <strong>residential and commercial</strong> spaces with clean, professional results. From flawless flooring to stunning bathroom and kitchen remodels, our team’s attention to detail ensures that your vision is not just met but elevated to something you’ll love for years to come. <em>Let us bring your next project to life</em>.</p>" },
@@ -112,7 +129,7 @@ export default {
         <div class="wrapper">
           <header class="space-apart">
             <h2>${title}</h2>
-            <a href="https://g.page/r/CVRBme3U3f9hEAI/review" target="_blank" class="rating row">
+            <a href="https://g.page/r/CeB4dRbzrVTxEAE/review" target="_blank" class="rating row">
               <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
               <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
               <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
@@ -130,61 +147,6 @@ export default {
             </div>
           </div>
         </div>
-        <script>
-          const gallery = document.querySelector('section#our-work .image-gallery');
-					const wp = document.querySelector('section#our-work .wrapper');
-          const row = gallery.querySelector('.image-row');
-          const btn = gallery.querySelector('.gallery-next-btn');
-          const images = row.querySelectorAll('img');
-          const gap = 35;
-					const timeoutDuration = 2500;
-          let index = 0;
-					let timeout;
-
-          ;function getShift() {
-            let shift = 0;
-            for (let i = 0; i < index; i++) {
-              shift += images[i].clientWidth + gap;
-            }
-            return shift;
-          }
-					
-					;function isLastImageVisible() {
-            const rowWidth = row.offsetWidth;
-            let remainingWidth = 0;
-            for (let i = index; i < images.length; i++) {
-              remainingWidth += images[i].clientWidth + (i < images.length - 1 ? gap : 0);
-            }
-            return remainingWidth <= rowWidth;
-          }
-      
-          ;function update() {
-						clearTimeout(timeout);
-            if (isLastImageVisible()) {
-              index = 0;
-            }
-            requestAnimationFrame(() => {
-              row.style.transform = "translateX(" + getShift() * -1 + "px)";
-            });
-            index++;
-						timeout = setTimeout(update, timeoutDuration);
-          }
-					
-					;function adjustGalleryOffset() {
-            if (wrapper && row) {
-              const left = wrapper.getBoundingClientRect().left;
-              row.style.marginLeft = (-left) + "px";
-            }
-          }
-          window.addEventListener('resize', adjustGalleryOffset);
-          window.addEventListener('DOMContentLoaded', adjustGalleryOffset);
-
-          ;btn.addEventListener('click', update);
-					
-					timeout = setTimeout(update, timeoutDuration);
-
-          ;window.addEventListener('resize', update);
-        </script>
       </section>
     `;
   }

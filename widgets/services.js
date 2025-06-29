@@ -9,6 +9,14 @@ export default {
       padding: "0",
       margin: "45px 0 0 0",
       gap: "45px",
+      alignItems: "flex-start",
+      "@media (max-width: 425px)": {
+        "&": {
+          margin: "20px 0 0 0",
+          flexDirection: "column",
+          gap: "20px",
+        }
+      },
       li: {
         flex: "1",
         textAlign: "center",
@@ -18,7 +26,30 @@ export default {
         p: {
           margin: 0,
           textTransform: "capitalize",
-        }
+        },
+        "@media (max-width: 600px)": {
+          "&": {
+            fontSize: "1rem",
+          }
+        },
+        "@media (max-width: 425px)": {
+          "&": {
+            flexDirection: "row",
+            maxHeight: "35vw",
+            width: "100%",
+            ".thumbnail": {
+              height: "100%",
+              width: "30%",
+              minWidth: "30%",
+              paddingTop: "30%",
+            },
+            p: {
+              textAlign: "left",
+              padding: "10px 0 0 ",
+              fontSize: "1.2rem",
+            }
+          }
+        },
       }
     }
   },

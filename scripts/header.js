@@ -34,12 +34,14 @@ const lerp = (a, b, t) => {
   }
 
 ;contentBox.addEventListener('scroll', (e) => {
+  const boxWidth = contentBox.offsetWidth;
+  const isMobile = boxWidth < 450;
   const scrollY = Math.min(contentBox.scrollTop, 44);
   const t = scrollY / 44;
   
   requestAnimationFrame(() => {
     logo.style.height = lerp(88, 44, t) + 'px';
-    header.style.clipPath = t >= 0.4 ? 'none' : 'var(--header-shape)';
+    header.style.clipPath = t >= 0.4 || isMobile ? 'none' : 'var(--header-shape)';
     
     logoSymbol.style.height = lerp(88, 60, t) + 'px';
     
@@ -48,7 +50,7 @@ const lerp = (a, b, t) => {
       header.parentNode.classList.add('simple');
       header.style.background = '#fff';
     } else {
-      wrapper.style.alignItems = 'flex-start';
+      wrapper.style.alignItems = isMobile  ? 'center' : 'flex-start';
       header.parentNode.classList.remove('simple');
       header.style.removeProperty('background');
     }

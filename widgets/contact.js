@@ -19,6 +19,17 @@ export default {
       justifyContent: "space-between",
       marginTop: "40px",
       gap: "40px",
+      "@media (max-width: 600px)": {
+        flexDirection: "column",
+        gap: "15px",
+        marginTop: "15px",
+        ".phone-disclaimer": {
+          display: "none"
+        },
+        textarea: {
+          height: "100px",
+        }
+      },
       fieldset: {
         margin: 0,
         padding: 0,
@@ -36,11 +47,20 @@ export default {
         top: 0,
         right: 0,
         transform: "translateY(calc(-100% - 60px))",
+        "@media (max-width: 600px)": {
+          position: "relative",
+          top: "auto",
+          right: "auto",
+          transform: "none",
+        }
       },
       label: {
         gap: "10px",
         span: {
           opacity: "0.7",
+        },
+        "@media (max-width: 600px)": {
+          fontSize: "0.9rem",
         }
       },
       "input, select, textarea": {
@@ -49,6 +69,11 @@ export default {
         borderRadius: "4px",
         width: "100%",
         height: "50px",
+        "@media (max-width: 600px)": {
+          padding: "12px",
+          height: "auto",
+          borderRadius: "2px",
+        }
       },
       select: {
         appearance: "none",
@@ -149,7 +174,7 @@ export default {
                 <span>${phoneLabel}</span>
                 <input type="tel" name="phone"/>
               </label>
-              <p><small>${phoneDisclaimer}</small></p>
+              <p class="phone-disclaimer"><small>${phoneDisclaimer}</small></p>
             </fieldset>
             <fieldset class="col">
               <label aria-label="${reasonLabel}" class="col">

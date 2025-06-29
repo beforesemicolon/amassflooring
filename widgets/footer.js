@@ -18,7 +18,15 @@ export default {
     },
     ".wrapper": {
       marginTop: "150px",
-      alignItems: "flex-start"
+      alignItems: "flex-start",
+      "@media (max-width: 1024px)": {
+        flexWrap: "wrap",
+      },
+      "@media (max-width: 600px)": {
+        flexDirection: "column",
+        alignItems: "center",
+        textAlign: "center"
+      }
     },
     img: {
       position: "relative",
@@ -29,6 +37,13 @@ export default {
     },
     ".contact-info, .social-links": {
       paddingTop: "70px",
+      flex: "1 1 35vw",
+      minWidth: "30%",
+      "@media (max-width: 600px)": {
+        paddingTop: 0,
+        flex: "1",
+        alignItems: "center",
+      }
     },
     ".social-links": {
       gap: "35px",
@@ -40,6 +55,10 @@ export default {
           textIndent: "2em",
           overflow: "hidden",
         }
+      },
+      "@media (max-width: 1024px)": {
+        paddingTop: "0",
+        justifyContent: "center",
       }
     },
     ".floor-samples": {

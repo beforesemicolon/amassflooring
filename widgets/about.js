@@ -2,7 +2,15 @@ export default {
   cssSelector: "#about",
   style: {
     ".wrapper": {
-      gap: "60px"
+      gap: "60px",
+      "@media (max-width: 875px)": {
+        flexDirection: "column-reverse",
+        "alignItems": "flex-start",
+        img: {
+          transform: "rotate(-90deg) translateY(67%) scale(2)",
+          height: "35vw"
+        }
+      }
     },
     ".content": {
       fontSize: "1.2rem",

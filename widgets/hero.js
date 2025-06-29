@@ -22,6 +22,20 @@ export default {
         textShadow: "var(--text-shadow)",
         color: "#fff",
         maxWidth: "100%",
+      },
+      "@media (max-width: 1024px)": {
+        "&": {
+          fontSize: "clamp(65px, 10vw, 116px)",
+          width: "90%",
+        },
+        "& + p": {
+          fontSize: "30px",
+        },
+      },
+      "@media (max-width: 425px)": {
+        "&": {
+          fontSize: "clamp(40px, 10vw, 116px)",
+        }
       }
     },
     ".cta-action": {
@@ -39,10 +53,20 @@ export default {
         fontSize: "1.1rem",
         fontWeight: "600",
         letterSpacing: "1px",
+        "@media (max-width: 600px)": {
+          "&": {
+            fontSize: "1rem",
+          }
+        }
       },
       a: {
         fontSize: "2rem",
-      }
+        "@media (max-width: 600px)": {
+          "&": {
+            fontSize: "1.6rem",
+          }
+        }
+      },
     }
   }),
   inputs: [

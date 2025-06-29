@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Fjalla One';
+    src: url('/assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
 *,
 ::after,
 ::before {
@@ -11,6 +17,7 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
+    height: 100%;
 }
 
 body {
@@ -18,8 +25,23 @@ body {
     width: 100%;
     height: 100%;
     font-family: Open Sans, sans-serif;
-    background-color: #000;
     color: #fff;
+    letter-spacing: 0.06rem;
+}
+
+[hidden] {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
 
 h1,
@@ -30,6 +52,7 @@ h5,
 h6,
 p {
     margin-top: 0;
+    line-height: 1.2;
 }
 
 span {
@@ -52,7 +75,7 @@ samp {
 }
 
 small {
-    font-size: 80%;
+    font-size: 60%;
 }
 
 sub,

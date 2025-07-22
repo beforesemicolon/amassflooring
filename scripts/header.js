@@ -25,6 +25,7 @@ sections.forEach(section => observer.observe(section));
 const header = document.querySelector('div#header header');
 const logo = header.querySelector('#logo a');
 const logoSymbol = header.querySelector('.logo-symbol');
+const logoName = header.querySelector('.logo-name');
 const wrapper = header.querySelector('.wrapper');
 const contentBox = document.querySelector('body > .content');
 const headerBefore = header;
@@ -36,14 +37,15 @@ const lerp = (a, b, t) => {
 ;contentBox.addEventListener('scroll', (e) => {
   const boxWidth = contentBox.offsetWidth;
   const isMobile = boxWidth < 450;
-  const scrollY = Math.min(contentBox.scrollTop, 44);
-  const t = scrollY / 44;
+  const scrollY = Math.min(contentBox.scrollTop, 32);
+  const t = scrollY / 32;
   
   requestAnimationFrame(() => {
-    logo.style.height = lerp(88, 44, t) + 'px';
+    logo.style.height = lerp(88, 32, t) + 'px';
     header.style.clipPath = t >= 0.4 || isMobile ? 'none' : 'var(--header-shape)';
     
-    logoSymbol.style.height = lerp(88, 60, t) + 'px';
+    logoSymbol.style.height = lerp(88, 40, t) + 'px';
+    logoName.style.height = lerp(43, 32, t) + 'px';
     
     if (t >= 0.4) {
       wrapper.style.alignItems = 'center';

@@ -61,6 +61,7 @@ export default {
         },
         "@media (max-width: 600px)": {
           fontSize: "0.9rem",
+          gap: "5px",
         }
       },
       "input, select, textarea": {
@@ -71,7 +72,7 @@ export default {
         height: "50px",
         "@media (max-width: 600px)": {
           padding: "12px",
-          height: "auto",
+          height: "100%",
           borderRadius: "2px",
         }
       },

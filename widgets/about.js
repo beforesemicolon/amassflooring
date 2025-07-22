@@ -22,7 +22,8 @@ export default {
     {
       type: "html",
       name: "description",
-      value: "<p>Based in East Massachusetts, A-Mass Flooring & Tile has been serving the community for several years, building a loyal customer base and growing mostly through word-of-mouth referrals.</p><p>We believe in doing things right the first time—no shortcuts, no compromises. Our focus on quality and precision ensures flooring and remodeling work that lasts and looks great, whether it's for residential or commercial projects.</p>"
+      value: "<p>Based in Massachusetts, A-Mass Flooring & Tile has been serving the community for several years—building a loyal customer base and growing primarily through word-of-mouth.</p>" +
+        "<p>We believe in doing things right the first time—no shortcuts, no compromises. Our focus on quality and precision ensures flooring and remodeling work that looks great and lasts for years to come—whether for residential or commercial projects.</p>"
     }
   ],
   render({ title, description, image, env }) {

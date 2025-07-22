@@ -22,6 +22,11 @@ export default {
       display: "flex",
       flexDirection: "column",
       gap: "10px",
+      "@media (max-width: 600px)": {
+        "& button": {
+          "height": "50px"
+        }
+      }
     },
     ".gallery-header": {
       display: "flex",
@@ -57,6 +62,13 @@ export default {
           "@media (max-width: 600px)": {
             transform: "scale(2)",
           }
+        }
+      }
+    },
+    ".rating": {
+      "@media (max-width: 600px)": {
+        "& img": {
+          width: "20px !important",
         }
       }
     }

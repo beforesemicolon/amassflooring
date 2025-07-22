@@ -73,7 +73,7 @@ export default {
   },
   inputs: [
     {type: "image", name: "logo", value: "assets/logo/emblem-logo-white.svg"},
-    {type: "html", name: "address", value: "<p>233 Broad St\nSte 13A #100\nBridgewater, MA 02324</p>"},
+    {type: "html", name: "address", value: "<p>75 North Main Street\n#2090\nRandolph, MA 02368</p>"},
     {type: "text", name: "email", value: "info@amassflooring.com"},
     {
       type: "text",

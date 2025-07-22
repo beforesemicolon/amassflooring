@@ -34,8 +34,11 @@ export default {
       },
       "@media (max-width: 425px)": {
         "&": {
-          fontSize: "clamp(40px, 10vw, 116px)",
-        }
+          fontSize: "clamp(45px, 10vw, 116px)",
+        },
+        "& + p": {
+          fontSize: "1.2rem",
+        },
       }
     },
     ".cta-action": {
@@ -43,7 +46,7 @@ export default {
       background: "var(--accent-color)",
       color: "#fff",
       textAlign: "center",
-      marginTop: "60px",
+      marginTop: "clamp(30px, 4vw, 60px)",
       borderBottomLeftRadius: "3px",
       borderBottomRightRadius: "3px",
       gap: 0,
@@ -55,7 +58,8 @@ export default {
         letterSpacing: "1px",
         "@media (max-width: 600px)": {
           "&": {
-            fontSize: "1rem",
+            fontSize: "0.9rem",
+            padding: "8px 10px",
           }
         }
       },
@@ -63,7 +67,7 @@ export default {
         fontSize: "2rem",
         "@media (max-width: 600px)": {
           "&": {
-            fontSize: "1.6rem",
+            fontSize: "1.4rem",
           }
         }
       },

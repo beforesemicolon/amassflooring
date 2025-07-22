@@ -1,0 +1,81 @@
+{
+  "id": "bathroom-renovations-service",
+  "stylesheets": [
+    {
+      "content": {
+        "#bathroom-renovations-service": {
+          ".wrapper": {
+            "alignItems": "flex-end",
+            "@media (max-width: 875px)": {
+              "& > img": {
+                "display": "none"
+              }
+            }
+          },
+          ".left-col": {
+            "maxWidth": "60%",
+            "@media (max-width: 875px)": {
+              "&": {
+                "maxWidth": "100%"
+              }
+            }
+          },
+          "img": {
+            "width": "100%",
+            "flex": 1,
+            "opacity": 0,
+            "animation": "slide-up 0.7s ease forwards"
+          }
+        }
+      }
+    }
+  ],
+  "content": [
+    {
+      "name": "section",
+      "id": "bathroom-renovations-service",
+      "class": "center col view-section service-section",
+      "children": [
+        {
+          "name": "div",
+          "class": "wrapper row",
+          "children": [
+            {
+              "name": "div",
+              "class": "left-col",
+              "children": [
+                {
+                  "name": "header",
+                  "children": [
+                    {
+                      "name": "button",
+                      "class": "return-btn",
+                      "children": [
+                        {
+                          "name": "img",
+                          "src": "{{env.assetsOrigin}}assets/icons/return-arrow.icon.svg"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "h3",
+                      "children": ["bathroom Renovations"]
+                    },
+                    {
+                      "name": "p",
+                      "children": [
+                        "Professional bathroom renovations that elevate your space with modern style, practical comfort, and craftsmanship you can trust."
+                      ]
+                    }
+                  ]
+                },
+                { "name": "img", "style": "animation-delay: 0.1s", "src": "{{env.assetsOrigin}}assets/bathroom-renovations-before-after.webp", "alt": "bathroom renovation before and after example" }
+              ]
+            },
+            { "name": "img", "style": "animation-delay: 0.2s", "src": "{{env.assetsOrigin}}assets/bathroom-renovations-sample.webp", "alt": "bathroom renovation example" }
+          ]
+        }
+      ]
+    }
+  ]
+}

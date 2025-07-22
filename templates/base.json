@@ -1,12 +1,104 @@
 {
   "type": "base",
   "metadata": [],
-  "scripts": [],
   "title": "A-Mass Flooring & Tile | Massachusetts Flooring and Tile Experts",
   "lang": "en",
   "description": "Top-rated Massachusetts flooring and tile company offering expert residential and commercial services in tile, hardwood flooring, dustless sanding, luxury vinyl plank and tile (LVP/LVT), carpet, VCT, rubber, and sheet flooring. We also specialize in high-quality kitchen and bathroom renovations.",
+  "image": "/assets/logo/logo-black.svg",
+  "scripts": [
+    {
+      "async": true,
+      "src": "https://www.googletagmanager.com/gtag/js?id=G-XCXJ3YGVFC"
+    },
+    "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XCXJ3YGVFC');"
+  ],
   "stylesheets": [
-    "normalizer.css"
+    "normalizer.css",
+    ".content { height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth;}",
+    ".wrapper { width: 100%; max-width: 1200px; padding: 0 25px; margin: 0 auto; box-sizing: border-box;}",
+    ".row { display: flex; gap: 20px; align-items: center; }",
+    ".center { display: flex; align-items: center; justify-content: center; }",
+    ".col { display: flex; flex-direction: column; gap: 20px; }",
+    ".space-apart { display: flex; gap: 20px; justify-content: space-between; align-items: center; }",
+    ":root {--accent-color: #13243F}",
+    "button, .btn {all: unset; cursor: pointer; font-weight: bold; color: var(--accent-color); font-weight: 700; font-size: 1.3rem; text-transform: capitalize; padding: 15px 35px; border-radius: 3px; background-color: #fff; white-space: nowrap;}",
+    "button.primary, .btn.primary { background-color: var(--accent-color); color: #fff; }",
+    ".view-section { height: 100vh; min-height: 100vh; max-height: 1500px; color: var(--accent-color); overflow: hidden; scroll-snap-align: start;}",
+    ".view-section h2 { font-size: 5rem; margin: 0; text-transform: uppercase; }",
+    ".view-section p { font-size: 1.5rem; margin-bottom: 2rem; max-width: 800px; line-height: 1.5; }",
+    "@media (max-width: 875px) { .view-section h2 { font-size: 4rem; margin-bottom: 5px; } .view-section p { font-size: 1.2rem; margin: 0 0 10px; } }",
+    "@media (max-width: 425px) { .view-section h2 { font-size: 2.5rem; } .view-section p { font-size: 1rem; } }",
+    ".thumbnail { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #eee; border-radius: 3px; } ",
+    ".thumbnail-1-1 { padding-top: 100%; }",
+    ".thumbnail-9-16 { padding-top: 177.78%; } ",
+    ".thumbnail > img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }",
+    {
+      "content": {
+        ".return-btn": {
+          "all": "unset",
+          "cursor": "pointer",
+          "opacity": 0,
+          "animation": "close-btn-slide 0.5s 0.3s ease forwards"
+        }
+      }
+    },
+    {
+      "content": {
+        ".service-section": {
+          "background": "#13243F",
+          "color": "#FFFFFF",
+          "position": "fixed",
+          "top": 0,
+          "left": 0,
+          "zIndex": 1000,
+          "width": "100vw",
+          "height": "100vh",
+          "animation": "bg-fade 0.5s ease forwards",
+          "header": {
+            "opacity": 0,
+            "animation": "header-slide 0.7s ease forwards"
+          },
+          "h3": {
+            "fontSize": "4rem",
+            "margin": "10px 0 0",
+            "textTransform": "capitalize"
+          },
+          "p": {
+            "opacity": 0.8
+          },
+          "@media (max-width: 600px)": {
+            "& h3": {
+              "fontSize": "3rem"
+            }
+          },
+          "@media (max-width: 425px)": {
+            "& h3": {
+              "fontSize": "2rem"
+            }
+          }
+        }
+      }
+    },
+    {
+      "content": {
+        "@keyframes bg-fade": {
+          "from": { "background": "#5c87cd" },
+          "to": { "background": "#13243F" }
+        },
+        "@keyframes header-slide": {
+          "from": { "transform": "translateY(-50px)", "opacity": 0 },
+          "to": { "transform": "translateY(0)", "opacity": 1 }
+        },
+        "@keyframes slide-up": {
+          "from": { "transform": "translateY(50px)", "opacity": 0 },
+          "to": { "transform": "translateY(0)", "opacity": 1 }
+        },
+        "@keyframes close-btn-slide": {
+          "from": { "transform": "translateX(100px)", "opacity": 0 },
+          "to": { "transform": "translateX(0)", "opacity": 1 }
+        }
+      }
+    }
   ],
   "favicons": [
     {
@@ -95,7 +187,8 @@
     "open-sans/OpenSans-Light.ttf",
     "open-sans/OpenSans-LightItalic.ttf",
     "open-sans/OpenSans-Semibold.ttf",
-    "open-sans/OpenSans-SemiboldItalic.ttf"
+    "open-sans/OpenSans-SemiboldItalic.ttf",
+    "Fjalla_One/FjallaOne-Regular.ttf"
   ],
   "manifest": "manifest.json",
   "content": []

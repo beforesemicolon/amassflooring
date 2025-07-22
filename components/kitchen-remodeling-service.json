@@ -1,0 +1,81 @@
+{
+  "id": "kitchen-remodeling-service",
+  "stylesheets": [
+    {
+      "content": {
+        "#kitchen-remodeling-service": {
+          ".wrapper": {
+            "alignItems": "flex-end",
+            "@media (max-width: 875px)": {
+              "& > img": {
+                "display": "none"
+              }
+            }
+          },
+          ".left-col": {
+            "maxWidth": "60%",
+            "@media (max-width: 875px)": {
+              "&": {
+                "maxWidth": "100%"
+              }
+            }
+          },
+          "img": {
+            "width": "100%",
+            "flex": 1,
+            "opacity": 0,
+            "animation": "slide-up 0.7s ease forwards"
+          }
+        }
+      }
+    }
+  ],
+  "content": [
+    {
+      "name": "section",
+      "id": "kitchen-remodeling-service",
+      "class": "center col view-section service-section",
+      "children": [
+        {
+          "name": "div",
+          "class": "wrapper row",
+          "children": [
+            {
+              "name": "div",
+              "class": "left-col",
+              "children": [
+                {
+                  "name": "header",
+                  "children": [
+                    {
+                      "name": "button",
+                      "class": "return-btn",
+                      "children": [
+                        {
+                          "name": "img",
+                          "src": "{{env.assetsOrigin}}assets/icons/return-arrow.icon.svg"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "h3",
+                      "children": ["kitchen Remodeling"]
+                    },
+                    {
+                      "name": "p",
+                      "children": [
+                        "Let us transform your kitchen into the space you’ve always envisioned—with custom design, expert craftsmanship, and guidance along the way."
+                      ]
+                    }
+                  ]
+                },
+                { "name": "img", "style": "animation-delay: 0.1s", "src": "{{env.assetsOrigin}}assets/kitchen-remodeling-before-after.webp", "alt": "kitchen remodeling before and after example" }
+              ]
+            },
+            { "name": "img", "style": "animation-delay: 0.2s", "src": "{{env.assetsOrigin}}assets/kitchen-remodeling-sample.webp", "alt": "kitchen remodeling example" }
+          ]
+        }
+      ]
+    }
+  ]
+}

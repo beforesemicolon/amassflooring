@@ -6,29 +6,21 @@
   "pathname": "/",
   "content": [
     {
-      "name": "h1",
-      "style": "text-align: center; font-size: 36px; margin-top: 50px;",
-      "children": ["Coming Soon!"]
-    },
-    {
-      "name": "img",
-      "src": "/assets/coming-soon.jpg",
-      "style": "margin: 0 auto; display: block; height: auto; max-width: 100vw; max-height: 80vh;"
-    },
-    {
-      "name": "footer",
+      "name": "div",
+      "class": "content",
       "children": [
-        {
-          "name": "p",
-          "style": "text-align: center; font-size: 14px; margin-top: 20px;",
-          "children": [
-            {
-              "name": "small",
-              "children": ["© 2025 A-Mass Flooring & Tile LLC. All rights reserved."]
-            }
-          ]
-        }
+        { "name": "widget", "id": "header" },
+        { "name": "widget", "id": "hero" },
+        { "name": "widget", "id": "services" },
+        { "name": "widget", "id": "about" },
+        { "name": "widget", "id": "our-work" },
+        { "name": "widget", "id": "contact" },
+        { "name": "widget", "id": "footer" }
       ]
+    },
+    {
+      "name": "widget",
+      "id": "cookies-warning"
     }
   ]
 }

@@ -114,7 +114,7 @@ export default {
           display: "flex",
         }
       },
-      "&.sending-request": {
+      "&.sending-form": {
         ".sending": {
           display: "flex",
         }

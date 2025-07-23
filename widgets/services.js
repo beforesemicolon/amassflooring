@@ -62,7 +62,8 @@ export default {
           type: "group",
           definitions: [
             { type: "image", name: "image", value: "assets/flooring-service.webp" },
-            { type: "text", name: "name", value: "Flooring service" },
+            { type: "text", name: "name", value: "Flooring installation" },
+            { type: "text", name: "dialog", value: "flooring-installation-service", readonly: true },
           ]
         },
         {
@@ -70,6 +71,7 @@ export default {
           definitions: [
             { type: "image", name: "image", value: "assets/kitchen-remodeling-service.webp" },
             { type: "text", name: "name", value: "Kitchen Remodeling" },
+            { type: "text", name: "dialog", value: "kitchen-remodeling-service", readonly: true },
           ]
         },
         {
@@ -77,6 +79,7 @@ export default {
           definitions: [
             { type: "image", name: "image", value: "assets/bathroom-renovation-service.webp" },
             { type: "text", name: "name", value: "Bathroom Renovations" },
+            { type: "text", name: "dialog", value: "bathroom-renovations-service", readonly: true },
           ]
         }
       ]
@@ -94,13 +97,15 @@ export default {
   ],
   render({ services, heading, description, env, $comp }) {
     const serviceItems = services.map(service => `
-      <li class="service-card col" tabindex="0" data-service="${service.name}">
+      <li class="service-card col" tabindex="0" aria-label="${service.name} service-card" data-dialog="${service.dialog}">
         <div class="thumbnail thumbnail-1-1">
           <img src="${env.assetsOrigin}${service.image}" alt="${service.name}" loading="lazy" />
         </div>
         <p>${service.name}</p>
       </li>
     `).join('');
+    
+    const dialogs = services.map(service => `<dialog id="${service.dialog}-dialog">${$comp(service.dialog)}</dialog>`).join('')
     
     return `
       <section id="services" class="center view-section">
@@ -110,25 +115,16 @@ export default {
           <ul class="row">${serviceItems}</ul>
         </div>
       </section>
-      <dialog id="flooring-service-dialog">${$comp('flooring-installation-service')}</dialog>
-      <dialog id="bathroom-remodeling-service-dialog">${$comp('bathroom-renovations-service')}</dialog>
-      <dialog id="kitchen-renovations-service-dialog">${$comp('kitchen-remodeling-service')}</dialog>
+      ${dialogs}
       <script>
         {
-					const flooringServiceDialog = document.getElementById('flooring-service-dialog');
-          const bathroomRemodelingServiceDialog = document.getElementById('bathroom-remodeling-service-dialog');
-				  const kitchenRenovationsServiceDialog = document.getElementById('kitchen-renovations-service-dialog');
-					const flooringServiceCard = document.querySelector('.service-card[data-service="Flooring service"]');
-          const bathroomRemodelingServiceCard = document.querySelector('.service-card[data-service="Bathroom Renovations"]');
-          const kitchenRenovationsServiceCard = document.querySelector('.service-card[data-service="Kitchen Remodeling"]');
-					
-					const dialogs = [flooringServiceDialog, bathroomRemodelingServiceDialog, kitchenRenovationsServiceDialog];
-					
-					[flooringServiceCard, bathroomRemodelingServiceCard, kitchenRenovationsServiceCard].forEach((card, idx) => {
+					document.querySelectorAll('#services .service-card').forEach((card) => {
+						const dialog = document.getElementById(card.dataset.dialog + '-dialog')
+						
 						card.addEventListener('click', () => {
-              dialogs[idx].showModal();
-              dialogs[idx].querySelector('.return-btn').addEventListener('click', () => {
-                 dialogs[idx].close();
+              dialog.showModal();
+              dialog.querySelector('.return-btn').addEventListener('click', () => {
+                 dialog.close();
               })
 						})
 					})

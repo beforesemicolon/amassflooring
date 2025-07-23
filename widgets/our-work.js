@@ -141,7 +141,7 @@ export default {
         <div class="wrapper">
           <header class="space-apart">
             <h2>${title}</h2>
-            <a href="https://g.page/r/CeB4dRbzrVTxEAE/review" target="_blank" class="rating row">
+            <a href="https://g.page/r/CeB4dRbzrVTxEBM/review" target="_blank" class="rating row">
               <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
               <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
               <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />

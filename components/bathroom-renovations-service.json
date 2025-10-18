@@ -35,6 +35,9 @@
       "name": "section",
       "id": "bathroom-renovations-service",
       "class": "center col view-section service-section",
+      "itemScope": true,
+      "itemType": "https://schema.org/Service",
+      "aria-labelledby": "bathroom-renovations-heading",
       "children": [
         {
           "name": "div",
@@ -59,20 +62,56 @@
                     },
                     {
                       "name": "h3",
-                      "children": ["bathroom Renovations"]
+                      "id": "bathroom-renovations-heading",
+                      "itemProp": "name",
+                      "children": [
+                        "Expert Bathroom Renovations in Massachusetts"
+                      ]
                     },
                     {
                       "name": "p",
+                      "itemProp": "description",
                       "children": [
-                        "Professional bathroom renovations that elevate your space with modern style, practical comfort, and craftsmanship you can trust."
+                        "Transform your <strong>Massachusetts bathroom</strong> with our professional <strong>bathroom renovation services</strong>. We specialize in complete bathroom remodels, <strong>custom tile work</strong>, modern fixtures, and elegant design that elevates your space with practical comfort and craftsmanship you can trust."
                       ]
                     }
                   ]
                 },
-                { "name": "img", "style": "animation-delay: 0.1s", "src": "{{env.assetsOrigin}}assets/bathroom-renovations-before-after.webp", "alt": "bathroom renovation before and after example" }
+                {
+                  "name": "img",
+                  "style": "animation-delay: 0.1s",
+                  "src": "{{env.assetsOrigin}}assets/bathroom-renovations-before-after.webp",
+                  "alt": "Before and after bathroom renovation by A. Mass Flooring & Tile showing modern tile work and fixtures in Massachusetts home",
+                  "width": "600",
+                  "height": "400",
+                  "itemProp": "image"
+                },
+                {
+                  "name": "meta",
+                  "itemProp": "provider",
+                  "content": "A. Mass Flooring & Tile"
+                },
+                {
+                  "name": "meta",
+                  "itemProp": "areaServed",
+                  "content": "Massachusetts"
+                },
+                {
+                  "name": "meta",
+                  "itemProp": "serviceType",
+                  "content": "Bathroom Renovation"
+                }
               ]
             },
-            { "name": "img", "style": "animation-delay: 0.2s", "src": "{{env.assetsOrigin}}assets/bathroom-renovations-sample.webp", "alt": "bathroom renovation example" }
+            {
+              "name": "img",
+              "style": "animation-delay: 0.2s",
+              "src": "{{env.assetsOrigin}}assets/bathroom-renovations-sample.webp",
+              "alt": "Completed bathroom renovation featuring custom tile installation and modern design by A. Mass Flooring & Tile",
+              "width": "400",
+              "height": "600",
+              "itemProp": "image"
+            }
           ]
         }
       ]

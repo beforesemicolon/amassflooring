@@ -54,6 +54,9 @@
       "name": "section",
       "id": "flooring-installation-service",
       "class": "center col view-section service-section",
+      "itemScope": true,
+      "itemType": "https://schema.org/Service",
+      "aria-labelledby": "flooring-installation-heading",
       "children": [
         {
           "name": "div",
@@ -74,14 +77,17 @@
                 },
                 {
                   "name": "h3",
+                  "id": "flooring-installation-heading",
+                  "itemProp": "name",
                   "children": [
-                    "flooring Installation"
+                    "Professional Flooring Installation in Massachusetts"
                   ]
                 },
                 {
                   "name": "p",
+                  "itemProp": "description",
                   "children": [
-                    "From hardwood to tile, we install it all—cleanly and professionally with advanced dustless sanding."
+                    "Expert <strong>flooring installation services</strong> throughout <strong>Massachusetts</strong>. From <strong>hardwood and luxury vinyl</strong> to <strong>tile and carpet</strong>, we install it all—cleanly and professionally with advanced <strong>dustless sanding technology</strong>. Our experienced team handles residential and commercial projects with precision and care."
                   ]
                 }
               ]
@@ -96,7 +102,7 @@
                   "children": [
                     {
                       "name": "div", "class":"thumbnail thumbnail-9-16", "children":[
-                      { "name": "img", "src": "{{env.assetsOrigin}}assets/tile-sample.webp" }
+                      { "name": "img", "src": "{{env.assetsOrigin}}assets/tile-sample.webp", "alt": "Professional tile flooring installation sample by A. Mass Flooring & Tile", "width": "200", "height": "300", "itemProp": "image" }
                     ]                    },
                     { "name": "span", "children": ["Tile"] }
                   ]
@@ -107,7 +113,7 @@
                   "style": "animation-delay: 0.1s",
                   "children": [
                     { "name": "div", "class": "thumbnail thumbnail-9-16", "children": [
-                      { "name": "img", "src": "{{env.assetsOrigin}}assets/hardwood-sample.webp" }
+                      { "name": "img", "src": "{{env.assetsOrigin}}assets/hardwood-sample.webp", "alt": "Hardwood flooring installation sample showing quality craftsmanship", "width": "200", "height": "300", "itemProp": "image" }
                     ]},
                     { "name": "span", "children": ["Hardwood"] }
                   ]
@@ -118,7 +124,7 @@
                   "style": "animation-delay: 0.2s",
                   "children": [
                     { "name": "div", "class": "thumbnail thumbnail-9-16", "children": [
-                      { "name": "img", "src": "{{env.assetsOrigin}}assets/vinyl-sample.webp" }
+                      { "name": "img", "src": "{{env.assetsOrigin}}assets/vinyl-sample.webp", "alt": "Luxury vinyl plank (LVP) flooring installation sample", "width": "200", "height": "300", "itemProp": "image" }
                     ]},
                     { "name": "span", "children": ["Vinyl"] }
                   ]
@@ -129,7 +135,7 @@
                   "style": "animation-delay: 0.3s",
                   "children": [
                     { "name": "div", "class": "thumbnail thumbnail-9-16", "children": [
-                      { "name": "img", "src": "{{env.assetsOrigin}}assets/epoxy-sample.webp" }
+                      { "name": "img", "src": "{{env.assetsOrigin}}assets/epoxy-sample.webp", "alt": "Epoxy flooring installation for commercial and residential spaces", "width": "200", "height": "300", "itemProp": "image" }
                     ]},
                     { "name": "span", "children": ["Epoxy"] }
                   ]
@@ -140,7 +146,7 @@
                   "style": "animation-delay: 0.4s",
                   "children": [
                     { "name": "div", "class": "thumbnail thumbnail-9-16", "children": [
-                      { "name": "img", "src": "{{env.assetsOrigin}}assets/carpet-sample.webp" }
+                      { "name": "img", "src": "{{env.assetsOrigin}}assets/carpet-sample.webp", "alt": "Professional carpet installation services in Massachusetts", "width": "200", "height": "300", "itemProp": "image" }
                     ]},
                     { "name": "span", "children": ["Carpet"] }
                   ]
@@ -151,13 +157,16 @@
                   "style": "animation-delay: 0.5s",
                   "children": [
                     { "name": "div", "class": "thumbnail thumbnail-9-16", "children": [
-                      { "name": "img", "src": "{{env.assetsOrigin}}assets/rubber-sample.webp" }
+                      { "name": "img", "src": "{{env.assetsOrigin}}assets/rubber-sample.webp", "alt": "Rubber flooring installation for commercial and gym applications", "width": "200", "height": "300", "itemProp": "image" }
                     ]},
                     { "name": "span", "children": ["Rubber"] }
                   ]
                 }
               ]
-            }
+            },
+            { "name": "meta", "itemProp": "provider", "content": "A. Mass Flooring & Tile" },
+            { "name": "meta", "itemProp": "areaServed", "content": "Massachusetts" },
+            { "name": "meta", "itemProp": "serviceType", "content": "Flooring Installation" }
           ]
         }
       ]

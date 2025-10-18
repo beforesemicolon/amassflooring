@@ -35,6 +35,9 @@
       "name": "section",
       "id": "kitchen-remodeling-service",
       "class": "center col view-section service-section",
+      "itemScope": true,
+      "itemType": "https://schema.org/Service",
+      "aria-labelledby": "kitchen-remodeling-heading",
       "children": [
         {
           "name": "div",
@@ -59,20 +62,26 @@
                     },
                     {
                       "name": "h3",
-                      "children": ["kitchen Remodeling"]
+                      "id": "kitchen-remodeling-heading",
+                      "itemProp": "name",
+                      "children": ["Complete Kitchen Remodeling in Massachusetts"]
                     },
                     {
                       "name": "p",
+                      "itemProp": "description",
                       "children": [
-                        "Let us transform your kitchen into the space you’ve always envisioned—with custom design, expert craftsmanship, and guidance along the way."
+                        "Transform your <strong>Massachusetts kitchen</strong> with our comprehensive <strong>kitchen remodeling services</strong>. We specialize in complete kitchen renovations, <strong>custom cabinetry</strong>, <strong>countertop installation</strong>, flooring, and modern design that creates the space you've always envisioned—with expert craftsmanship and guidance along the way."
                       ]
                     }
                   ]
                 },
-                { "name": "img", "style": "animation-delay: 0.1s", "src": "{{env.assetsOrigin}}assets/kitchen-remodeling-before-after.webp", "alt": "kitchen remodeling before and after example" }
+                { "name": "img", "style": "animation-delay: 0.1s", "src": "{{env.assetsOrigin}}assets/kitchen-remodeling-before-after.webp", "alt": "Before and after kitchen remodeling by A. Mass Flooring & Tile showing modern cabinetry and countertops in Massachusetts home", "width": "600", "height": "400", "itemProp": "image" },
+                { "name": "meta", "itemProp": "provider", "content": "A. Mass Flooring & Tile" },
+                { "name": "meta", "itemProp": "areaServed", "content": "Massachusetts" },
+                { "name": "meta", "itemProp": "serviceType", "content": "Kitchen Remodeling" }
               ]
             },
-            { "name": "img", "style": "animation-delay: 0.2s", "src": "{{env.assetsOrigin}}assets/kitchen-remodeling-sample.webp", "alt": "kitchen remodeling example" }
+            { "name": "img", "style": "animation-delay: 0.2s", "src": "{{env.assetsOrigin}}assets/kitchen-remodeling-sample.webp", "alt": "Completed kitchen remodeling featuring custom cabinetry and modern design by A. Mass Flooring & Tile", "width": "400", "height": "600", "itemProp": "image" }
           ]
         }
       ]

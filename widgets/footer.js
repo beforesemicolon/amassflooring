@@ -1,6 +1,6 @@
 export default {
   cssSelector: "#footer",
-  style: ({env}) => ({
+  style: ({ env }) => ({
     "#footer": {
       backgroundColor: "var(--accent-color)",
       color: "#fff",
@@ -36,7 +36,7 @@ export default {
       gap: "30px",
     },
     ".contact-info, .social-links": {
-      paddingTop: "70px",
+      paddingTop: "40px",
       flex: "1 1 35vw",
       minWidth: "30%",
       "@media (max-width: 600px)": {
@@ -69,48 +69,134 @@ export default {
       backgroundSize: "auto 100%",
       backgroundPosition: "center",
       opacity: "0.8",
+    },
+    ".company-info": {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      "@media (max-width: 600px)": {
+        marginBottom: "20px",
+      }
+    },
+    ".contact-info": {
+      "h3": {
+        margin: "0 0 10px 0",
+        fontSize: "1.2em",
+      },
+      "p": {
+        margin: "5px 0",
+        lineHeight: "1.4",
+      },
+      "strong": {
+        color: "#fff",
+        fontWeight: "600",
+      },
+      "a": {
+        color: "#ccc",
+        textDecoration: "none",
+        "&:hover": {
+          color: "#fff",
+          textDecoration: "underline",
+        },
+        "&:focus": {
+          outline: "2px solid #fff",
+          outlineOffset: "2px",
+        }
+      }
     }
   }),
   inputs: [
-    {type: "image", name: "logo", value: "assets/logo/emblem-logo-white.svg"},
-    {type: "html", name: "address", value: "<p>75 North Main Street\n#2090\nRandolph, MA 02368</p>"},
-    {type: "text", name: "email", value: "info@amassflooring.com"},
+    { type: "image", name: "logo", value: "assets/logo/emblem-logo-white.svg" },
+    { type: "html", name: "address", value: "75 North Main Street\n#2090\nRandolph, MA 02368" },
+    { type: "text", name: "email", value: "info@amassflooring.com" },
     {
       type: "text",
       name: "copyright",
       label: "Copyright",
-      value: "© 2025 A-Mass Flooring & Tile LLC. All rights reserved."
+      value: "© 2025 A-Mass Flooring & Tile LLC. Licensed Massachusetts flooring contractors. All rights reserved."
     },
     {
       type: "group", name: "socialLinks", definitions: [
-        {type: "text", name: "facebook", value: "https://www.facebook.com/people/A-Mass-Flooring/61577201170889/"},
-        {type: "text", name: "instagram", value: "https://www.instagram.com/amassflooring/"},
-        {type: "text", name: "twitter", value: ""},
-        {type: "text", name: "youtube", value: ""},
+        { type: "text", name: "facebook", value: "https://www.facebook.com/people/A-Mass-Flooring/61577201170889/" },
+        { type: "text", name: "instagram", value: "https://www.instagram.com/amassflooring/" },
+        { type: "text", name: "twitter", value: "" },
+        { type: "text", name: "youtube", value: "" },
       ]
     }
   ],
-  render({logo, address, copyright, socialLinks, email, env}) {
+  render({ logo, address, copyright, socialLinks, email, env }) {
+    const socialPlatforms = {
+      facebook: 'Facebook',
+      instagram: 'Instagram',
+      twitter: 'Twitter',
+      youtube: 'YouTube'
+    };
+
     const social = Object.entries(socialLinks)
-      .filter(([k, v]) => Boolean(v))
-      .map(([k, v]) => `<a target="_blank" href="${v}" aria-label="${k} social logo"><span style="background: url(${env.assetsOrigin}assets/icons/${k}.icon.svg)">${k}</span></a>`).join("");
-    
+      .filter(([platform, url]) => Boolean(url))
+      .map(([platform, url]) => `
+        <a target="_blank"
+           href="${url}"
+           rel="noopener noreferrer"
+           aria-label="Follow A. Mass Flooring & Tile on ${socialPlatforms[platform]}"
+           itemprop="sameAs">
+          <span style="background: url(${env.assetsOrigin}assets/icons/${platform}.icon.svg)"
+                aria-hidden="true">${socialPlatforms[platform]}</span>
+        </a>
+      `).join("");
+
     const formattedAddress = address.replace(/\n/g, "<br>");
-    
+
     return `
-      <footer id="footer" class="view-section col">
+      <footer id="footer" class="view-section col" role="contentinfo" itemscope itemtype="https://schema.org/LocalBusiness">
         <div class="wrapper row">
-          <img src="${env.assetsOrigin}${logo}" alt="a.mass flooring & tile logo" width="300" height="300" loading="lazy" />
-          <div class="contact-info">
-            <address>${formattedAddress}</address>
+          <div class="company-info">
+            <img src="${env.assetsOrigin}${logo}"
+                 alt="A. Mass Flooring & Tile company logo - Massachusetts flooring and renovation experts"
+                 width="300"
+                 height="300"
+                 loading="lazy"
+                 itemprop="logo" />
+            <meta itemprop="name" content="A. Mass Flooring & Tile" />
+            <meta itemprop="description" content="Professional flooring installation and renovation services in Massachusetts" />
+          </div>
+          <div class="contact-info" itemscope itemtype="https://schema.org/PostalAddress">
+            <h3 hidden>Contact Information</h3>
+            <address itemprop="address">
+              <span itemprop="streetAddress">75 North Main Street<br>#2090</span><br>
+              <span itemprop="addressLocality">Randolph</span>,
+              <span itemprop="addressRegion">MA</span>
+              <span itemprop="postalCode">02368</span><br>
+              <span itemprop="addressCountry">United States</span>
+            </address>
+            <p>
+              <strong>Phone:</strong>
+              <a href="tel:+15089418283" itemprop="telephone">(508) 941-8283</a>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:${email}" itemprop="email">${email}</a>
+            </p>
+            <p>
+              <strong>Service Area:</strong>
+              <span itemprop="areaServed">Massachusetts</span>
+            </p>
             <p><small><em>${copyright}</em></small></p>
           </div>
           <div class="social-links row">
+            <h3 hidden>Follow Us</h3>
             ${social}
-            <a href="mailto:${email}">${email}</a>
+            <div itemscope itemtype="https://schema.org/ContactPoint">
+              <meta itemprop="contactType" content="Customer Service" />
+              <meta itemprop="areaServed" content="Massachusetts" />
+              <meta itemprop="availableLanguage" content="English" />
+            </div>
           </div>
         </div>
-        <div class="floor-samples"></div>
+        <div class="floor-samples" role="img" aria-label="Decorative flooring samples pattern"></div>
+        <meta itemprop="priceRange" content="$$" />
+        <meta itemprop="paymentAccepted" content="Cash, Check, Credit Card" />
+        <meta itemprop="url" content="/" />
       </footer>
     `;
   }

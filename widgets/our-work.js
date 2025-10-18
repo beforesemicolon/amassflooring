@@ -81,17 +81,6 @@ export default {
         outline: "2px solid var(--accent-color)",
         outlineOffset: "2px",
       }
-    },
-    ".sr-only": {
-      position: "absolute",
-      width: "1px",
-      height: "1px",
-      padding: "0",
-      margin: "-1px",
-      overflow: "hidden",
-      clip: "rect(0, 0, 0, 0)",
-      whiteSpace: "nowrap",
-      border: "0",
     }
   },
   scripts: [
@@ -173,10 +162,10 @@ export default {
     const imagesHtml = images.map((imageSrc, idx) => {
       const projectType = projectTypes[idx] || 'Professional flooring and renovation project';
       return `
-        <img src="${env.assetsOrigin}${imageSrc}" 
-             alt="${projectType} completed by A. Mass Flooring & Tile in Massachusetts" 
-             loading="lazy" 
-             width="400" 
+        <img src="${env.assetsOrigin}${imageSrc}"
+             alt="${projectType} completed by A. Mass Flooring & Tile in Massachusetts"
+             loading="lazy"
+             width="400"
              height="285"
              itemprop="image" />
       `;
@@ -188,12 +177,12 @@ export default {
           <header class="space-apart">
             <h2 id="our-work-heading" itemprop="name">${title}</h2>
             <div class="rating row" itemscope itemtype="https://schema.org/AggregateRating">
-              <a href="https://g.page/r/CeB4dRbzrVTxEBM/review" 
-                 target="_blank" 
+              <a href="https://g.page/r/CeB4dRbzrVTxEBM/review"
+                 target="_blank"
                  rel="noopener noreferrer"
                  aria-label="View our 5-star Google reviews for A. Mass Flooring & Tile"
                  class="rating-link row">
-                <span class="sr-only">5 out of 5 stars rating</span>
+                <span hidden>5 out of 5 stars rating</span>
                 <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
                 <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
                 <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
@@ -209,12 +198,12 @@ export default {
           <div class="description" itemprop="description">${description}</div>
           <div class="image-gallery" role="region" aria-label="Project gallery showcasing completed flooring and renovation work">
             <div class="gallery-header">
-              <button class="gallery-next-btn" 
-                      aria-label="View next project images" 
+              <button class="gallery-next-btn"
+                      aria-label="View next project images"
                       type="button"
                       title="Navigate to next images in gallery">
                 <span aria-hidden="true">&#8594;</span>
-                <span class="sr-only">Next</span>
+                <span hidden>Next</span>
               </button>
             </div>
             <div class="image-row" role="img" aria-label="Gallery of completed flooring and renovation projects by A. Mass Flooring & Tile">

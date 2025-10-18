@@ -142,61 +142,71 @@ export default {
     },
     "@keyframes spin": {
       "100%": {
-          transform: "rotate(360deg)"
+        transform: "rotate(360deg)"
       }
     }
   },
   inputs: [
-    { type: "text", name: "title", value: "Contact Us" },
+    { type: "text", name: "title", value: "Contact A. Mass Flooring & Tile - Free Quote" },
     { type: "text", name: "nameLabel", label: "Name Label", value: "Name" },
     { type: "text", name: "emailLabel", label: "Email Label", value: "Email" },
     { type: "text", name: "phoneLabel", label: "Phone Label", value: "Phone" },
     { type: "text", name: "phoneDisclaimer", label: "Phone Label", value: "By providing my phone number I understand that I may be contacted via calls or texts (including through use of an automatic telephone dialing system) to provide information about or to help me enroll in my requested service. Message and data rates may apply." },
     { type: "text", name: "reasonLabel", label: "Reason Label", value: "Reason for contact" },
     { type: "text", name: "messageLabel", label: "Message Label", value: "Message" },
-    { type: "text", name: "messagePlaceholder", label: "Message Placeholder", value: "Provide as much details as possible so we can better help you with your inquire." },
-    { type: "text", name: "submitLabel", label: "Submit Button Label", value: "Send" }
+    { type: "text", name: "messagePlaceholder", label: "Message Placeholder", value: "Tell us about your Massachusetts flooring or renovation project. Include details like room size, preferred materials, timeline, and any specific requirements." },
+    { type: "text", name: "submitLabel", label: "Submit Button Label", value: "Get Free Quote" }
   ],
   render({ title, nameLabel, emailLabel, phoneLabel, reasonLabel, phoneDisclaimer, messageLabel, messagePlaceholder, submitLabel }) {
     return `
-      <section id="contact" class="center view-section">
+      <section id="contact" class="center view-section" aria-labelledby="contact-heading" itemscope itemtype="https://schema.org/LocalBusiness">
         <div class="wrapper">
-          <h2>${title}</h2>
-          <form id="contact-form" class="row">
+          <h2 id="contact-heading">${title}</h2>
+          <div itemscope itemtype="https://schema.org/ContactPoint">
+            <meta itemprop="contactType" content="Customer Service" />
+            <meta itemprop="areaServed" content="Massachusetts" />
+            <meta itemprop="availableLanguage" content="English" />
+          </div>
+          <form id="contact-form" class="row" role="form" aria-label="Contact form for A. Mass Flooring & Tile quote requests">
             <fieldset class="col">
-              <div class="error-message">Please fix invalid fields before sending</div>
-              <label aria-label="${nameLabel}" class="col">
+              <legend hidden>Personal Information</legend>
+              <div class="error-message" role="alert" aria-live="polite">Please fix invalid fields before sending</div>
+              <label for="contact-name" class="col">
                 <span>${nameLabel} *</span>
-                <input type="text" name="name" required/>
+                <input type="text" id="contact-name" name="name" required aria-required="true" autocomplete="name" />
               </label>
-              <label aria-label="${emailLabel}" class="col">
+              <label for="contact-email" class="col">
                 <span>${emailLabel} *</span>
-                <input type="email" name="email" required/>
+                <input type="email" id="contact-email" name="email" required aria-required="true" autocomplete="email" />
               </label>
-              <label aria-label="${phoneLabel}" class="col">
+              <label for="contact-phone" class="col">
                 <span>${phoneLabel}</span>
-                <input type="tel" name="phone"/>
+                <input type="tel" id="contact-phone" name="phone" autocomplete="tel" />
               </label>
               <p class="phone-disclaimer"><small>${phoneDisclaimer}</small></p>
             </fieldset>
             <fieldset class="col">
-              <label aria-label="${reasonLabel}" class="col">
+              <legend hidden>Service Request Details</legend>
+              <label for="contact-reason" class="col">
                 <span>${reasonLabel}</span>
-                <select name="reason">
-                  <option value="flooring quote" selected>Flooring Service Quote</option>
-                  <option value="kitchen remodeling quote">Kitchen Remodeling Quote</option>
-                  <option value="bathroom renovation quote">Bathroom Renovations Quote</option>
+                <select id="contact-reason" name="reason" aria-describedby="reason-help">
+                  <option value="flooring quote" selected>Professional Flooring Installation Quote</option>
+                  <option value="kitchen remodeling quote">Complete Kitchen Remodeling Quote</option>
+                  <option value="bathroom renovation quote">Expert Bathroom Renovation Quote</option>
                   <option value="general inquiry">General Inquiry</option>
                 </select>
+                <small id="reason-help" hidden>Select the type of service you're interested in</small>
               </label>
-              <label aria-label="${messageLabel}" class="col">
+              <label for="contact-message" class="col">
                 <span>${messageLabel} *</span>
-                <textarea placeholder="${messagePlaceholder}" rows="11" name="message" required></textarea>
+                <textarea id="contact-message" placeholder="${messagePlaceholder}" rows="11" name="message" required aria-required="true" aria-describedby="message-help"></textarea>
+                <small id="message-help" hidden>Provide details about your project including location, timeline, and specific requirements</small>
               </label>
             </fieldset>
-            <button type="submit" class="btn primary send-btn">${submitLabel}</button>
-            <div class="sending center col">
-              <svg class="spinner" viewBox="0 0 50 50">
+            <button type="submit" class="btn primary send-btn" aria-describedby="submit-help">${submitLabel}</button>
+            <small id="submit-help" hidden>Submit your request for a free quote from A. Mass Flooring & Tile</small>
+            <div class="sending center col" role="status" aria-live="polite">
+              <svg class="spinner" viewBox="0 0 50 50" aria-hidden="true">
                 <circle
                   class="spinner-path"
                   cx="25"
@@ -210,30 +220,38 @@ export default {
                   stroke-dashoffset="0"
                 />
               </svg>
-              <p>Sending...</p>
+              <p>Sending your request...</p>
             </div>
-            <div class="success center col">
-              <svg class="checkmark" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;">
+            <div class="success center col" role="status" aria-live="polite">
+              <svg class="checkmark" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;" aria-hidden="true">
                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" stroke="green"></circle>
                 <path class="checkmark__check" fill="none" d="M16.1 26.2l7.1 7.1L36.9 20" stroke="green"></path>
               </svg>
-              <p>Message sent successfully!</p>
-              <button class="primary" type="button">ok</button>
+              <p>Your message was sent successfully! We'll contact you soon.</p>
+              <button class="primary" type="button" aria-label="Close success message">OK</button>
             </div>
-            <div class="error center col">
-              <svg class="error-icon" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;">
+            <div class="error center col" role="alert" aria-live="assertive">
+              <svg class="error-icon" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;" aria-hidden="true">
                 <circle class="error__circle" cx="26" cy="26" r="25" fill="none" stroke="red"></circle>
                 <line class="error__line error__line--left" x1="16" y1="16" x2="36" y2="36" stroke="red"></line>
                 <line class="error__line error__line--right" x1="36" y1="16" x2="16" y2="36" stroke="red"></line>
               </svg>
-              <p>Failed to send message.</p>
-              <button type="button">ok</button>
+              <p>Failed to send message. Please try again or call us directly.</p>
+              <button type="button" aria-label="Close error message">OK</button>
             </div>
             <div class="g-recaptcha"
               data-sitekey="6LenNGcrAAAAAJy4RHYhlN5oWhgh4yju90Iqp3p0"
               data-callback="SubmitForm"
               data-size="invisible"></div>
           </form>
+          <div itemscope itemtype="https://schema.org/PostalAddress">
+            <meta itemprop="addressRegion" content="Massachusetts" />
+            <meta itemprop="addressCountry" content="US" />
+          </div>
+          <meta itemprop="name" content="A. Mass Flooring & Tile" />
+          <meta itemprop="telephone" content="(508) 941-8283" />
+          <meta itemprop="areaServed" content="Massachusetts" />
+          <meta itemprop="serviceArea" content="Massachusetts" />
         </div>
       </section>
     `;

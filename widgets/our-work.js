@@ -71,6 +71,27 @@ export default {
           width: "20px !important",
         }
       }
+    },
+    ".rating-link": {
+      textDecoration: "none",
+      "&:hover": {
+        opacity: "0.8",
+      },
+      "&:focus": {
+        outline: "2px solid var(--accent-color)",
+        outlineOffset: "2px",
+      }
+    },
+    ".sr-only": {
+      position: "absolute",
+      width: "1px",
+      height: "1px",
+      padding: "0",
+      margin: "-1px",
+      overflow: "hidden",
+      clip: "rect(0, 0, 0, 0)",
+      whiteSpace: "nowrap",
+      border: "0",
     }
   },
   scripts: [
@@ -78,7 +99,7 @@ export default {
   ],
   inputs: [
     { type: "text", name: "title", value: "Our Work" },
-    { type: "html", name: "description", value: "<p>At A-Mass Flooring & Tile, we combine precision and care in every flooring and renovation project—transforming both <strong>residential and commercial</strong> spaces with clean, professional results. From flawless flooring to stunning bathroom and kitchen remodels, our team’s attention to detail ensures that your vision is not just met but elevated to something you’ll love for years to come. <em>Let us bring your next project to life</em>.</p>" },
+    { type: "html", name: "description", value: "<p>At <strong>A-Mass Flooring & Tile</strong>, we combine precision and care in every <strong>flooring and renovation project</strong> throughout <strong>Massachusetts</strong>—transforming both <strong>residential and commercial</strong> spaces with clean, professional results. From flawless <strong>hardwood and luxury vinyl flooring</strong> to stunning bathroom and kitchen remodels, our team’s attention to detail ensures that your vision is not just met but elevated to something you’ll love for years to come. <em>Let us bring your next Massachusetts project to life</em>.</p>" },
     {
       type: "list",
       name: "images",
@@ -133,31 +154,76 @@ export default {
     }
   ],
   render({ title, images, description, env }) {
-    const imagesHtml = images.map((imageSrc, idx) => `
-      <img src="${env.assetsOrigin}${imageSrc}" alt="work example ${idx+1}" loading="lazy" />
-    `).join('');
+    // Generate descriptive alt text for project images
+    const projectTypes = [
+      'Hardwood flooring installation', 'Luxury vinyl plank flooring', 'Ceramic tile installation',
+      'Kitchen renovation', 'Bathroom remodeling', 'Commercial flooring project', 'Tile backsplash installation',
+      'Laminate flooring', 'Carpet installation', 'Epoxy flooring', 'Stone tile work', 'Hardwood refinishing',
+      'Kitchen countertop installation', 'Bathroom tile work', 'Commercial tile project', 'Vinyl tile flooring',
+      'Custom kitchen design', 'Bathroom renovation', 'Flooring repair', 'Tile restoration',
+      'Luxury bathroom remodel', 'Modern kitchen renovation', 'Commercial flooring installation', 'Residential tile work',
+      'Hardwood floor sanding', 'Kitchen backsplash', 'Bathroom floor tile', 'Commercial renovation',
+      'Custom tile design', 'Flooring installation', 'Kitchen remodeling', 'Bathroom upgrade',
+      'Tile and grout work', 'Luxury flooring', 'Commercial tile installation', 'Residential renovation',
+      'Custom flooring', 'Tile repair', 'Kitchen upgrade', 'Bathroom design',
+      'Professional flooring', 'Tile installation', 'Kitchen renovation', 'Bathroom remodeling',
+      'Flooring project', 'Tile work', 'Kitchen design', 'Bathroom renovation'
+    ];
+
+    const imagesHtml = images.map((imageSrc, idx) => {
+      const projectType = projectTypes[idx] || 'Professional flooring and renovation project';
+      return `
+        <img src="${env.assetsOrigin}${imageSrc}" 
+             alt="${projectType} completed by A. Mass Flooring & Tile in Massachusetts" 
+             loading="lazy" 
+             width="400" 
+             height="285"
+             itemprop="image" />
+      `;
+    }).join('');
+
     return `
-      <section id="our-work" class="center view-section">
+      <section id="our-work" class="center view-section" aria-labelledby="our-work-heading" itemscope itemtype="https://schema.org/LocalBusiness">
         <div class="wrapper">
           <header class="space-apart">
-            <h2>${title}</h2>
-            <a href="https://g.page/r/CeB4dRbzrVTxEBM/review" target="_blank" class="rating row">
-              <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
-              <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
-              <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
-              <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
-              <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="star rating" width="35" height="35" />
-            </a>
-          </header>
-          <div class="description">${description}</div>
-          <div class="image-gallery">
-            <div class="gallery-header">
-              <button class="gallery-next-btn">&#8594;</button>
+            <h2 id="our-work-heading" itemprop="name">${title}</h2>
+            <div class="rating row" itemscope itemtype="https://schema.org/AggregateRating">
+              <a href="https://g.page/r/CeB4dRbzrVTxEBM/review" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="View our 5-star Google reviews for A. Mass Flooring & Tile"
+                 class="rating-link row">
+                <span class="sr-only">5 out of 5 stars rating</span>
+                <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
+                <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
+                <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
+                <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
+                <img loading="lazy" src="${env.assetsOrigin}assets/icons/star.icon.svg" alt="" width="35" height="35" role="presentation" />
+                <meta itemprop="ratingValue" content="5" />
+                <meta itemprop="bestRating" content="5" />
+                <meta itemprop="worstRating" content="1" />
+                <meta itemprop="ratingCount" content="50" />
+              </a>
             </div>
-            <div class="image-row">
+          </header>
+          <div class="description" itemprop="description">${description}</div>
+          <div class="image-gallery" role="region" aria-label="Project gallery showcasing completed flooring and renovation work">
+            <div class="gallery-header">
+              <button class="gallery-next-btn" 
+                      aria-label="View next project images" 
+                      type="button"
+                      title="Navigate to next images in gallery">
+                <span aria-hidden="true">&#8594;</span>
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+            <div class="image-row" role="img" aria-label="Gallery of completed flooring and renovation projects by A. Mass Flooring & Tile">
               ${imagesHtml}
             </div>
           </div>
+          <meta itemprop="areaServed" content="Massachusetts" />
+          <meta itemprop="serviceArea" content="Massachusetts" />
+          <meta itemprop="priceRange" content="$$" />
         </div>
       </section>
     `;

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main homepage -->
+  <url>
+    <loc>https://amassflooring.com/</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/logo/logo-black.svg</image:loc>
+      <image:title>A. Mass Flooring & Tile Logo</image:title>
+      <image:caption>Massachusetts flooring and tile experts logo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Hero section (main landing) -->
+  <url>
+    <loc>https://amassflooring.com/#hero</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/hero-bg.webp</image:loc>
+      <image:title>Professional flooring installation by A. Mass Flooring & Tile</image:title>
+      <image:caption>Massachusetts flooring and renovation services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About section -->
+  <url>
+    <loc>https://amassflooring.com/#about</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/flooring-selection-options.webp</image:loc>
+      <image:title>Wide selection of flooring options at A. Mass Flooring & Tile</image:title>
+      <image:caption>Flooring options including hardwood, tile, and luxury vinyl in Massachusetts showroom</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services section -->
+  <url>
+    <loc>https://amassflooring.com/#services</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/flooring-service.webp</image:loc>
+      <image:title>Professional Flooring Installation Services</image:title>
+      <image:caption>Expert flooring installation by A. Mass Flooring & Tile in Massachusetts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/kitchen-remodeling-service.webp</image:loc>
+      <image:title>Complete Kitchen Remodeling Services</image:title>
+      <image:caption>Kitchen remodeling and renovation services in Massachusetts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/bathroom-renovation-service.webp</image:loc>
+      <image:title>Expert Bathroom Renovation Services</image:title>
+      <image:caption>Bathroom renovation and remodeling services in Massachusetts</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Our Work / Portfolio section -->
+  <url>
+    <loc>https://amassflooring.com/#our-work</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/project-1.webp</image:loc>
+      <image:title>Hardwood flooring installation project</image:title>
+      <image:caption>Completed hardwood flooring project by A. Mass Flooring & Tile in Massachusetts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/project-2.webp</image:loc>
+      <image:title>Luxury vinyl plank flooring project</image:title>
+      <image:caption>Professional luxury vinyl flooring installation in Massachusetts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amassflooring.com/assets/project-3.webp</image:loc>
+      <image:title>Ceramic tile installation project</image:title>
+      <image:caption>Custom tile installation work by A. Mass Flooring & Tile</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact section -->
+  <url>
+    <loc>https://amassflooring.com/#contact</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

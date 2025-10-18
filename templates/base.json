@@ -1,16 +1,67 @@
 {
   "type": "base",
-  "metadata": [],
-  "title": "A-Mass Flooring & Tile | Massachusetts Flooring and Tile Experts",
+  "metadata": {
+    "keywords": [
+      "Massachusetts flooring",
+      "tile installation",
+      "hardwood flooring",
+      "luxury vinyl plank",
+      "kitchen remodeling",
+      "bathroom renovation",
+      "commercial flooring",
+      "residential flooring",
+      "dustless sanding",
+      "LVP",
+      "LVT",
+      "carpet installation",
+      "epoxy flooring",
+      "Randolph MA",
+      "Boston area flooring"
+    ],
+    "author": "A. Mass Flooring & Tile",
+    "canonical": "https://amassflooring.com",
+    "themeColor": "#13243F",
+    "languageDirection": "ltr",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "geo.region": "US-MA",
+    "geo.placename": "Massachusetts",
+    "geo.position": "42.1619;-71.0275",
+    "ICBM": "42.1619, -71.0275",
+    "og:type": "website",
+    "og:site_name": "A. Mass Flooring & Tile",
+    "og:title": "A-Mass Flooring & Tile | Massachusetts Flooring and Tile Experts",
+    "og:description": "Top-rated Massachusetts flooring and tile company offering expert residential and commercial services in tile, hardwood flooring, dustless sanding, luxury vinyl plank and tile (LVP/LVT), carpet, VCT, rubber, and sheet flooring. We also specialize in high-quality kitchen and bathroom renovations.",
+    "og:url": "https://amassflooring.com",
+    "og:image": "https://amassflooring.com/assets/logo/logo-black.svg",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "A. Mass Flooring & Tile - Massachusetts flooring and renovation experts",
+    "og:locale": "en_US",
+    "twitter:card": "summary_large_image",
+    "twitter:title": "A-Mass Flooring & Tile | Massachusetts Flooring and Tile Experts",
+    "twitter:description": "Top-rated Massachusetts flooring and tile company offering expert residential and commercial services. Specializing in hardwood, luxury vinyl, tile installation, kitchen and bathroom renovations.",
+    "twitter:image": "https://amassflooring.com/assets/logo/logo-black.svg",
+    "twitter:image:alt": "A. Mass Flooring & Tile - Massachusetts flooring experts",
+    "msapplication-TileColor": "#13243F",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "A-Mass Flooring"
+  },
+  "title": "A-Mass Flooring & Tile | Massachusetts Flooring Installation & Renovation Experts",
   "lang": "en",
-  "description": "Top-rated Massachusetts flooring and tile company offering expert residential and commercial services in tile, hardwood flooring, dustless sanding, luxury vinyl plank and tile (LVP/LVT), carpet, VCT, rubber, and sheet flooring. We also specialize in high-quality kitchen and bathroom renovations.",
+  "description": "Top-rated Massachusetts flooring contractors specializing in professional hardwood, luxury vinyl (LVP/LVT), tile installation, kitchen remodeling & bathroom renovations. Serving residential & commercial clients with dustless sanding, carpet, epoxy & specialty flooring. Licensed & insured. Free quotes.",
   "image": "/assets/logo/logo-black.svg",
   "scripts": [
     {
       "async": true,
       "src": "https://www.googletagmanager.com/gtag/js?id=G-XCXJ3YGVFC"
     },
-    "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XCXJ3YGVFC');"
+    "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XCXJ3YGVFC');",
+    {
+      "content": "{\"@context\":\"https://schema.org\",\"@type\":\"LocalBusiness\",\"@id\":\"https://amassflooring.com/#organization\",\"name\":\"A. Mass Flooring & Tile\",\"alternateName\":\"A-Mass Flooring & Tile\",\"description\":\"Professional flooring installation and renovation services in Massachusetts specializing in hardwood, luxury vinyl, tile, kitchen and bathroom remodeling.\",\"url\":\"https://amassflooring.com\",\"logo\":\"https://amassflooring.com/assets/logo/logo-black.svg\",\"image\":[\"https://amassflooring.com/assets/hero-bg.webp\",\"https://amassflooring.com/assets/flooring-service.webp\",\"https://amassflooring.com/assets/kitchen-remodeling-service.webp\",\"https://amassflooring.com/assets/bathroom-renovation-service.webp\"],\"telephone\":\"(508) 941-8283\",\"email\":\"info@amassflooring.com\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"75 North Main Street #2090\",\"addressLocality\":\"Randolph\",\"addressRegion\":\"MA\",\"postalCode\":\"02368\",\"addressCountry\":\"US\"},\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":42.1619,\"longitude\":-71.0275},\"areaServed\":[{\"@type\":\"State\",\"name\":\"Massachusetts\"}],\"serviceArea\":{\"@type\":\"GeoCircle\",\"geoMidpoint\":{\"@type\":\"GeoCoordinates\",\"latitude\":42.1619,\"longitude\":-71.0275},\"geoRadius\":\"50000\"},\"priceRange\":\"$$\",\"paymentAccepted\":[\"Cash\",\"Check\",\"Credit Card\"],\"currenciesAccepted\":\"USD\",\"openingHours\":\"Mo-Fr 08:00-17:00\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"5\",\"reviewCount\":\"50\",\"bestRating\":\"5\",\"worstRating\":\"1\"},\"review\":[{\"@type\":\"Review\",\"reviewRating\":{\"@type\":\"Rating\",\"ratingValue\":\"5\",\"bestRating\":\"5\"},\"author\":{\"@type\":\"Person\",\"name\":\"Satisfied Customer\"},\"reviewBody\":\"Excellent flooring installation service. Professional, clean, and high-quality work.\"}],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Flooring and Renovation Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Professional Flooring Installation\",\"description\":\"Expert installation of hardwood, luxury vinyl, tile, carpet, and specialty flooring\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Complete Kitchen Remodeling\",\"description\":\"Full kitchen renovation including cabinetry, countertops, and flooring\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Expert Bathroom Renovations\",\"description\":\"Complete bathroom remodeling with custom tile work and modern fixtures\"}}]},\"sameAs\":[\"https://www.facebook.com/people/A-Mass-Flooring/61577201170889/\",\"https://www.instagram.com/amassflooring/\",\"https://g.page/r/CeB4dRbzrVTxEBM\"]}",
+      "type": "application/ld+json"
+    }
   ],
   "stylesheets": [
     "@font-face { font-family: 'Fjalla One'; src: url('/assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('truetype'); font-weight: normal; }",
@@ -209,7 +260,39 @@
       "href": "favicon-16x16.png"
     }
   ],
-  "links": [],
+  "links": [
+    {
+      "rel": "canonical",
+      "href": "https://amassflooring.com"
+    },
+    {
+      "rel": "alternate",
+      "hreflang": "en-US",
+      "href": "https://amassflooring.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//www.google.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//www.googletagmanager.com"
+    },
+    {
+      "rel": "dns-prefetch",
+      "href": "//fonts.googleapis.com"
+    },
+    {
+      "rel": "preconnect",
+      "href": "https://www.google.com",
+      "crossorigin": "anonymous"
+    },
+    {
+      "rel": "preconnect",
+      "href": "https://www.googletagmanager.com",
+      "crossorigin": "anonymous"
+    }
+  ],
   "fonts": [
     "open-sans/OpenSans-Bold.ttf",
     "open-sans/OpenSans-ExtraBold.ttf",

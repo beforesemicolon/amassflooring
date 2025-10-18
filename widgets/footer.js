@@ -64,6 +64,7 @@ export default {
     ".floor-samples": {
       width: "100%",
       height: "50%",
+      flex: 1,
       backgroundImage: `url('${env.assetsOrigin}assets/flooring-samples.webp')`,
       backgroundRepeat: "repeat-x",
       backgroundSize: "auto 100%",

@@ -1,6 +1,6 @@
 export default {
   cssSelector: "#footer",
-  style: {
+  style: ({env}) => ({
     "#footer": {
       backgroundColor: "var(--accent-color)",
       color: "#fff",
@@ -64,13 +64,13 @@ export default {
     ".floor-samples": {
       width: "100%",
       height: "50%",
-      backgroundImage: "url('/assets/flooring-samples.webp')",
+      backgroundImage: `url('${env.assetsOrigin}assets/flooring-samples.webp')`,
       backgroundRepeat: "repeat-x",
       backgroundSize: "auto 100%",
       backgroundPosition: "center",
       opacity: "0.8",
     }
-  },
+  }),
   inputs: [
     {type: "image", name: "logo", value: "assets/logo/emblem-logo-white.svg"},
     {type: "html", name: "address", value: "<p>75 North Main Street\n#2090\nRandolph, MA 02368</p>"},

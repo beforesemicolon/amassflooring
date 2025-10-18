@@ -10,7 +10,7 @@ export default {
       }
     },
     "#our-work": {
-      backgroundColor: "#f7f7f7",
+      backgroundColor: "#fff",
     },
     ".description": {
       p: {

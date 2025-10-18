@@ -12,7 +12,9 @@ export default {
     "handleForm('contact-form', 'template_nl6iial', 'service_76sa4dn')"
   ],
   style: {
-    "#contact": {},
+    "#contact": {
+      backgroundColor: "#f7f7f7",
+    },
     "#contact-form": {
       position: "relative",
       alignItems: "flex-start",

@@ -13,7 +13,18 @@
     "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XCXJ3YGVFC');"
   ],
   "stylesheets": [
-    "normalizer.css",
+    "@font-face { font-family: 'Fjalla One'; src: url('/assets/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('truetype'); font-weight: normal; }",
+    "*, ::after, ::before { box-sizing: border-box; }",
+    "html { font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; line-height: 1.15; -webkit-text-size-adjust: 100%; tab-size: 4; height: 100%; }",
+    "body { margin: 0; width: 100%; height: 100%; font-family: Open Sans, sans-serif; color: #fff; letter-spacing: 0.06rem; }",
+    "[hidden] { display: none; }",
+    "h1, h2, h3, h4, h5, h6 { font-family: 'Fjalla One', sans-serif; letter-spacing: 2px; font-weight: 500; margin-top: 0; line-height: 1.2; }",
+    "p { margin-top: 0; line-height: 1.2; }",
+    "span { display: inline-block; }",
+    "b, strong { font-weight: bolder; }",
+    "small { font-size: 60%; }",
+    "button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; background: none; }",
+    "[type='button'], [type='reset'], [type='submit'], button { -webkit-appearance: button; cursor: pointer; }",
     ".content { height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth;}",
     ".wrapper { width: 100%; max-width: 1200px; padding: 0 25px; margin: 0 auto; box-sizing: border-box;}",
     ".row { display: flex; gap: 20px; align-items: center; }",
@@ -23,9 +34,9 @@
     ":root {--accent-color: #13243F}",
     "button, .btn {all: unset; cursor: pointer; font-weight: bold; color: var(--accent-color); font-weight: 700; font-size: 1.3rem; text-transform: capitalize; padding: 15px 35px; border-radius: 3px; background-color: #fff; white-space: nowrap;}",
     "button.primary, .btn.primary { background-color: var(--accent-color); color: #fff; }",
-    ".view-section { height: 100vh; min-height: 100vh; max-height: 1500px; color: var(--accent-color); overflow: hidden; scroll-snap-align: start;}",
+    ".view-section { min-height: 100vh; color: var(--accent-color); overflow: hidden; scroll-snap-align: start;}",
     ".view-section h2 { font-size: 5rem; margin: 0; text-transform: uppercase; }",
-    ".view-section p { font-size: 1.5rem; margin-bottom: 2rem; max-width: 800px; line-height: 1.5; }",
+    ".view-section p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 800px; line-height: 1.5; }",
     "@media (max-width: 875px) { .view-section h2 { font-size: 4rem; margin-bottom: 5px; } .view-section p { font-size: 1.2rem; margin: 0 0 10px; } }",
     "@media (max-width: 425px) { .view-section h2 { font-size: 2.5rem; } .view-section p { font-size: 1rem; } }",
     ".thumbnail { position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #eee; border-radius: 3px; } ",
@@ -82,20 +93,42 @@
     {
       "content": {
         "@keyframes bg-fade": {
-          "from": { "background": "#5c87cd" },
-          "to": { "background": "#13243F" }
+          "from": {
+            "background": "#5c87cd"
+          },
+          "to": {
+            "background": "#13243F"
+          }
         },
         "@keyframes header-slide": {
-          "from": { "transform": "translateY(-50px)", "opacity": 0 },
-          "to": { "transform": "translateY(0)", "opacity": 1 }
+          "from": {
+            "transform": "translateY(-50px)",
+            "opacity": 0
+          },
+          "to": {
+            "transform": "translateY(0)",
+            "opacity": 1
+          }
         },
         "@keyframes slide-up": {
-          "from": { "transform": "translateY(50px)", "opacity": 0 },
-          "to": { "transform": "translateY(0)", "opacity": 1 }
+          "from": {
+            "transform": "translateY(50px)",
+            "opacity": 0
+          },
+          "to": {
+            "transform": "translateY(0)",
+            "opacity": 1
+          }
         },
         "@keyframes close-btn-slide": {
-          "from": { "transform": "translateX(100px)", "opacity": 0 },
-          "to": { "transform": "translateX(0)", "opacity": 1 }
+          "from": {
+            "transform": "translateX(100px)",
+            "opacity": 0
+          },
+          "to": {
+            "transform": "translateX(0)",
+            "opacity": 1
+          }
         }
       }
     }

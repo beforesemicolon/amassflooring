@@ -11,8 +11,8 @@
       "children": [
         { "name": "widget", "id": "header" },
         { "name": "widget", "id": "hero" },
-        { "name": "widget", "id": "services" },
         { "name": "widget", "id": "about" },
+        { "name": "widget", "id": "services" },
         { "name": "widget", "id": "our-work" },
         { "name": "widget", "id": "contact" },
         { "name": "widget", "id": "footer" }

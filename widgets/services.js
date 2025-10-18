@@ -23,9 +23,12 @@ export default {
         fontWeight: "600",
         fontSize: "1.6rem",
         cursor: "pointer",
-        p: {
+        "p, h3": {
           margin: 0,
           textTransform: "capitalize",
+          fontSize: "inherit",
+          fontWeight: "inherit",
+          fontFamily: "inherit",
         },
         "@media (max-width: 600px)": {
           "&": {
@@ -43,7 +46,7 @@ export default {
               minWidth: "30%",
               paddingTop: "30%",
             },
-            p: {
+            "p, h3": {
               textAlign: "left",
               padding: "10px 0 0 ",
               fontSize: "1.4rem",
@@ -62,7 +65,7 @@ export default {
           type: "group",
           definitions: [
             { type: "image", name: "image", value: "assets/flooring-service.webp" },
-            { type: "text", name: "name", value: "Flooring installation" },
+            { type: "text", name: "name", value: "Professional Flooring Installation" },
             { type: "text", name: "dialog", value: "flooring-installation-service", readonly: true },
           ]
         },
@@ -70,7 +73,7 @@ export default {
           type: "group",
           definitions: [
             { type: "image", name: "image", value: "assets/kitchen-remodeling-service.webp" },
-            { type: "text", name: "name", value: "Kitchen Remodeling" },
+            { type: "text", name: "name", value: "Complete Kitchen Remodeling" },
             { type: "text", name: "dialog", value: "kitchen-remodeling-service", readonly: true },
           ]
         },
@@ -78,7 +81,7 @@ export default {
           type: "group",
           definitions: [
             { type: "image", name: "image", value: "assets/bathroom-renovation-service.webp" },
-            { type: "text", name: "name", value: "Bathroom Renovations" },
+            { type: "text", name: "name", value: "Expert Bathroom Renovations" },
             { type: "text", name: "dialog", value: "bathroom-renovations-service", readonly: true },
           ]
         }
@@ -92,27 +95,36 @@ export default {
     {
       type: "html",
       name: "description",
-      value: "<p>Transform your space with expert flooring installations and elegant kitchen and bathroom renovations. <strong>Our commitment to quality ensures stunning results every time</strong>.</p>"
+      value: "<p>Transform your <strong>Massachusetts home or business</strong> with our expert <strong>flooring installations</strong>, elegant <strong>kitchen remodeling</strong>, and complete <strong>bathroom renovations</strong>. From <strong>hardwood and luxury vinyl flooring</strong> to custom <strong>tile work</strong> and full-scale renovations, <strong>our commitment to quality craftsmanship ensures stunning results every time</strong>.</p>"
     }
   ],
   render({ services, heading, description, env, $comp }) {
-    const serviceItems = services.map(service => `
-      <li class="service-card col" tabindex="0" aria-label="${service.name} service-card" data-dialog="${service.dialog}">
+    const serviceItems = services.map((service, index) => `
+      <li class="service-card col" tabindex="0" aria-label="Learn more about ${service.name} services" data-dialog="${service.dialog}" itemscope itemtype="https://schema.org/Service">
         <div class="thumbnail thumbnail-1-1">
-          <img src="${env.assetsOrigin}${service.image}" alt="${service.name}" loading="lazy" />
+          <img src="${env.assetsOrigin}${service.image}" alt="Professional ${service.name.toLowerCase()} by A. Mass Flooring & Tile in Massachusetts" loading="lazy" width="300" height="300" itemprop="image" />
         </div>
-        <p>${service.name}</p>
+        <h3 itemprop="name">${service.name}</h3>
+        <meta itemprop="provider" content="A. Mass Flooring & Tile" />
+        <meta itemprop="areaServed" content="Massachusetts" />
+        <meta itemprop="serviceType" content="${service.name}" />
       </li>
     `).join('');
-    
+
     const dialogs = services.map(service => `<dialog id="${service.dialog}-dialog">${$comp(service.dialog)}</dialog>`).join('')
-    
+
     return `
-      <section id="services" class="center view-section">
+      <section id="services" class="center view-section" aria-labelledby="services-heading" itemscope itemtype="https://schema.org/LocalBusiness">
         <div class="wrapper">
-          <h2>${heading}</h2>
-          ${description}
-          <ul class="row">${serviceItems}</ul>
+          <h2 id="services-heading" itemprop="name">${heading}</h2>
+          <div itemprop="description">
+            ${description}
+          </div>
+          <ul class="row" role="list" aria-label="Available services">
+            ${serviceItems}
+          </ul>
+          <meta itemprop="areaServed" content="Massachusetts" />
+          <meta itemprop="serviceArea" content="Massachusetts" />
         </div>
       </section>
       ${dialogs}

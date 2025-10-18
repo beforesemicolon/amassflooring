@@ -166,23 +166,27 @@ export default {
     "header.js"
   ],
   render({ phone, menuItems, env }) {
+    const cleanPhone = phone.replace(/\D/g, "");
+
     return `
        <div id="header">
-         <header class="space-apart ">
+         <header class="space-apart" itemscope itemtype="https://schema.org/LocalBusiness">
           <div class="wrapper space-apart">
             <h1 id="logo">
-              <a href="/" class="row">
-                <img class="logo-symbol" src="${env.assetsOrigin}assets/logo/symbol-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="88" style="height: 88px" />
-                <img class="logo-name" src="${env.assetsOrigin}assets/logo/name-logo-black.svg" alt="A. Mass Flooring & Tile Logo" height="43" style="height: 43px" />
+              <a href="/" class="row" aria-label="A. Mass Flooring & Tile - Massachusetts Flooring Experts Homepage" itemprop="url">
+                <img class="logo-symbol" src="${env.assetsOrigin}assets/logo/symbol-logo-black.svg" alt="A. Mass Flooring & Tile company logo symbol" height="88" width="88" style="height: 88px" itemprop="logo" />
+                <img class="logo-name" src="${env.assetsOrigin}assets/logo/name-logo-black.svg" alt="A. Mass Flooring & Tile company name" height="43" width="auto" style="height: 43px" />
+                <meta itemprop="name" content="A. Mass Flooring & Tile" />
+                <meta itemprop="description" content="Massachusetts flooring and tile experts specializing in residential and commercial services" />
               </a>
             </h1>
-            <nav class="row">
-              <a href="tel:${phone.replace(/\D/g, "")}" class="phone row">
-                <img src="${env.assetsOrigin}assets/icons/phone.icon.svg" alt="phone icon" height="16" width="16" />
+            <nav class="row" role="navigation" aria-label="Main navigation">
+              <a href="tel:${cleanPhone}" class="phone row" aria-label="Call A. Mass Flooring & Tile at ${phone}" itemprop="telephone" content="${cleanPhone}">
+                <img src="${env.assetsOrigin}assets/icons/phone.icon.svg" alt="Phone" height="40" width="40" />
                 <span>${phone}</span>
               </a>
               ${menuItems.map(item => `
-                <a href="${item.link}" class="menu-item">${item.label}</a>
+                <a href="${item.link}" class="menu-item" aria-label="Navigate to ${item.label} section">${item.label}</a>
               `).join('')}
             </nav>
           </div>

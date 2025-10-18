@@ -1,11 +1,12 @@
 export default {
   cssSelector: "#hero",
-  style: ({env}) => ({
+  style: ({ env }) => ({
     "#hero": {
       background: `url('${env.assetsOrigin}assets/hero-bg.webp') no-repeat center center`,
       backgroundSize: "cover",
       paddingTop: "100px",
-      "--text-shadow": "0 3px 6px rgba(0, 0, 0, 0.3)"
+      "--text-shadow": "0 3px 6px rgba(0, 0, 0, 0.3)",
+      position: "relative"
     },
     h2: {
       fontSize: "clamp(80px, 8vw, 116px)",
@@ -79,16 +80,24 @@ export default {
     { type: "text", name: "cta", value: "Request A Quote" },
     { type: "text", name: "note", value: "Commercial & Residential" }
   ],
-  render({ title, description, cta, note }) {
+  render({ title, description, cta, note, env }) {
     return `
-      <section id="hero" class="center view-section">
-        <div class="wrapper">
-          <h2>${title}</h2>
-          <p>${description}</p>
+      <section id="hero" class="center view-section" role="banner" aria-label="Hero section showcasing Massachusetts flooring and renovation services">
+        <img src="${env.assetsOrigin}assets/hero-bg.webp" alt="Professional flooring installation by A. Mass Flooring & Tile in Massachusetts home" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;" loading="eager" />
+        <div class="wrapper" itemscope itemtype="https://schema.org/LocalBusiness">
+          <h2 itemprop="name">${title}</h2>
+          <p itemprop="description">${description}</p>
           <div class="cta-action col">
-            <a href="#contact" class="btn">${cta}</a>
-            <p>${note}</p>
+            <a href="#contact" class="btn" aria-label="Request a quote for flooring and renovation services in Massachusetts" itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="name">${cta}</span>
+            </a>
+            <p><span itemprop="serviceType">${note}</span></p>
           </div>
+          <meta itemprop="areaServed" content="Massachusetts" />
+          <meta itemprop="serviceArea" content="Massachusetts" />
+          <meta itemprop="priceRange" content="$$" />
+          <meta itemprop="telephone" content="(508) 941-8283" />
+          <meta itemprop="url" content="/" />
         </div>
       </section>
     `;

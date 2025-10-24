@@ -7,7 +7,7 @@ export default {
         flexDirection: "column-reverse",
         "alignItems": "flex-start",
         img: {
-          transform: "rotate(-90deg) translateY(67%) scale(2)",
+          transform: "rotate(0deg) translateY(67%) scale(2)",
           height: "35vw"
         }
       }
